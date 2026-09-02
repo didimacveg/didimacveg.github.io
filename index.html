@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego — AI / Robotics / Software</title>
+<meta name="description" content="17-year-old builder. Local-first AI systems, robotics, software.">
+<style>
+  :root {
+    --ink: #0d1117;
+    --paper: #fbfaf8;
+    --muted: #5c6470;
+    --rule: #e4e0da;
+    --accent: #1a4d8f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8e6e3; --paper: #0f1113; --muted: #8b939e;
+      --rule: #23272c; --accent: #6aa9e8;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 17px/1.65 ui-serif, Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 43rem; margin: 0 auto; padding: 5rem 1.6rem 7rem; }
+
+  header { margin-bottom: 4.5rem; }
+  h1 { font-size: 1.9rem; font-weight: 400; margin: 0 0 .4rem; letter-spacing: -.01em; }
+  .tag { color: var(--muted); font-size: 1rem; margin: 0; }
+
+  section { margin-bottom: 3.8rem; }
+  h2 {
+    font: 600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+    margin: 0 0 1.2rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule);
+  }
+  p { margin: 0 0 1rem; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: currentColor; }
+
+  .project { margin-bottom: 2.4rem; }
+  .project h3 { font-size: 1.15rem; font-weight: 600; margin: 0 0 .15rem; }
+  .project .meta {
+    font: 400 .8rem/1.5 ui-sans-serif, system-ui, sans-serif;
+    color: var(--muted); margin: 0 0 .7rem;
+  }
+  .project p { font-size: .96rem; }
+  .links {
+    font: 400 .85rem/1 ui-sans-serif, system-ui, sans-serif;
+    display: flex; gap: 1.2rem; margin-top: .6rem;
+  }
+
+  ul { padding-left: 1.1rem; margin: 0 0 1rem; }
+  li { margin-bottom: .35rem; }
+
+  .row { display: flex; justify-content: space-between; gap: 1.5rem;
+         padding: .55rem 0; border-bottom: 1px solid var(--rule); font-size: .95rem; }
+  .row:last-child { border-bottom: none; }
+  .row span:last-child { color: var(--muted); white-space: nowrap;
+    font: 400 .85rem/1.6 ui-sans-serif, system-ui, sans-serif; }
+
+  footer { color: var(--muted); font-size: .85rem;
+           font-family: ui-sans-serif, system-ui, sans-serif;
+           padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Diego</h1>
+  <p class="tag">AI · Robotics · Software. Building things in Madrid.</p>
+</header>
+
+<section>
+  <h2>About</h2>
+  <p>
+    I'm seventeen and I build systems. Right now that mostly means KAIROS —
+    a local-first AI assistant that runs on my own hardware, controls my
+    desktop, and modifies its own source code under supervision.
+  </p>
+  <p>
+    I'm interested in the part of AI that touches the physical world:
+    robotics, control, perception. I want to study that somewhere it's taken
+    seriously, and eventually build something of my own.
+  </p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>KAIROS</h3>
+    <p class="meta">Python · FastAPI · Postgres/pgvector · Next.js · Docker</p>
+    <p>
+      A personal AI assistant that runs entirely on my machine. Seventeen
+      agents, semantic memory, voice in and out, desktop control, and a
+      self-modification loop that writes its own patches, tests them in an
+      isolated sandbox, and waits for my approval before applying anything.
+    </p>
+    <p>
+      Seventy-six build phases, every architectural decision documented —
+      including the ones I got wrong.
+    </p>
+    <div class="links">
+      <a href="https://github.com/didimacveg/kairos">Source</a>
+      <a href="https://github.com/didimacveg/kairos/tree/main/docs/adr">Decision records</a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>GetSympto</h3>
+    <p class="meta">Web application</p>
+    <p>
+      <!-- Rellenar: qué problema resuelve, en una o dos frases. -->
+    </p>
+    <div class="links">
+      <a href="https://github.com/didimacveg">Source</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="row"><span>Bachillerato, Ciencias y Tecnología</span><span>2025–2027</span></div>
+  <div class="row"><span>CS50x — Harvard, via edX</span><span>in progress</span></div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="row"><span>Cambridge C1 Advanced — English</span><span>2024</span></div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:tu@correo.com">Email</a> ·
+    <a href="https://github.com/didimacveg">GitHub</a> ·
+    <a href="https://linkedin.com/in/tu-usuario-linkedin">LinkedIn</a>
+  </p>
+</section>
+
+<footer>
+  Last updated September 2026.
+</footer>
+
+</div>
+</body>
+</html>
