@@ -3,155 +3,292 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diego — AI / Robotics / Software</title>
-<meta name="description" content="17-year-old builder. Local-first AI systems, robotics, software.">
+<title>Diego Macías Vega — AI / Robotics / Software</title>
+<meta name="description" content="I build local-first AI systems. Currently: KAIROS, a personal assistant that modifies its own source code.">
+<meta property="og:title" content="Diego Macías Vega">
+<meta property="og:description" content="I build local-first AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0d1117;
-    --paper: #fbfaf8;
-    --muted: #5c6470;
-    --rule: #e4e0da;
-    --accent: #1a4d8f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e8e6e3; --paper: #0f1113; --muted: #8b939e;
-      --rule: #23272c; --accent: #6aa9e8;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font: 400 17px/1.65 ui-serif, Georgia, "Times New Roman", serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 43rem; margin: 0 auto; padding: 5rem 1.6rem 7rem; }
+:root{
+  --bg:#08090b; --panel:#0d0f13; --rule:#1a1e25; --rule-lit:#252b35;
+  --ink:#e6e9ed; --dim:#8b95a3; --faint:#59626e;
+  --ice:#4fd8ff; --violet:#a678ff; --brass:#e0b354;
+  --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--sans);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
 
-  header { margin-bottom: 4.5rem; }
-  h1 { font-size: 1.9rem; font-weight: 400; margin: 0 0 .4rem; letter-spacing: -.01em; }
-  .tag { color: var(--muted); font-size: 1rem; margin: 0; }
+/* Retícula de fondo. Estática y muy tenue: da textura sin pedir atención. */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(79,216,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(79,216,255,.022) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);
+}
 
-  section { margin-bottom: 3.8rem; }
-  h2 {
-    font: 600 .72rem/1 ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
-    margin: 0 0 1.2rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule);
-  }
-  p { margin: 0 0 1rem; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
-  a:hover { border-bottom-color: currentColor; }
+.wrap{position:relative;z-index:1;max-width:52rem;margin:0 auto;padding:0 1.6rem}
 
-  .project { margin-bottom: 2.4rem; }
-  .project h3 { font-size: 1.15rem; font-weight: 600; margin: 0 0 .15rem; }
-  .project .meta {
-    font: 400 .8rem/1.5 ui-sans-serif, system-ui, sans-serif;
-    color: var(--muted); margin: 0 0 .7rem;
-  }
-  .project p { font-size: .96rem; }
-  .links {
-    font: 400 .85rem/1 ui-sans-serif, system-ui, sans-serif;
-    display: flex; gap: 1.2rem; margin-top: .6rem;
-  }
+/* ── barra superior ─────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(8,9,11,.82);border-bottom:1px solid var(--rule);
+}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;
+  height:3.6rem;gap:2rem}
+.brand{font:500 .8rem/1 var(--mono);letter-spacing:.22em;color:var(--ink)}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{font:400 .78rem/1 var(--sans);color:var(--dim);text-decoration:none;
+  transition:color .2s}
+nav a:hover{color:var(--ice)}
+@media(max-width:640px){nav ul{display:none}}
 
-  ul { padding-left: 1.1rem; margin: 0 0 1rem; }
-  li { margin-bottom: .35rem; }
+/* ── portada ────────────────────────────────────────────────── */
+header{padding:7rem 0 5rem}
+.status{display:inline-flex;align-items:center;gap:.5rem;
+  font:400 .68rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:1.6rem}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--ice);
+  box-shadow:0 0 8px var(--ice);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
 
-  .row { display: flex; justify-content: space-between; gap: 1.5rem;
-         padding: .55rem 0; border-bottom: 1px solid var(--rule); font-size: .95rem; }
-  .row:last-child { border-bottom: none; }
-  .row span:last-child { color: var(--muted); white-space: nowrap;
-    font: 400 .85rem/1.6 ui-sans-serif, system-ui, sans-serif; }
+h1{font:300 clamp(2.2rem,6vw,3.6rem)/1.1 var(--sans);letter-spacing:-.02em;
+  margin-bottom:1.2rem}
+h1 em{font-style:normal;color:var(--ice)}
+.lede{font-size:1.12rem;color:var(--dim);max-width:34rem;line-height:1.75}
+.lede strong{color:var(--ink);font-weight:400}
 
-  footer { color: var(--muted); font-size: .85rem;
-           font-family: ui-sans-serif, system-ui, sans-serif;
-           padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.cta{display:flex;gap:.7rem;margin-top:2.4rem;flex-wrap:wrap}
+.cta a{
+  font:500 .78rem/1 var(--sans);padding:.72rem 1.2rem;text-decoration:none;
+  border:1px solid var(--rule-lit);color:var(--ink);
+  transition:border-color .2s,color .2s,background .2s;
+}
+.cta a:hover{border-color:var(--ice);color:var(--ice);background:rgba(79,216,255,.05)}
+.cta a[data-primary]{background:var(--ice);color:#06080b;border-color:var(--ice)}
+.cta a[data-primary]:hover{background:#7ee6ff;border-color:#7ee6ff;color:#06080b}
+
+/* ── secciones ──────────────────────────────────────────────── */
+section{padding:4rem 0;border-top:1px solid var(--rule)}
+h2{font:500 .7rem/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:2.2rem}
+h3{font:500 1.22rem/1.35 var(--sans);margin-bottom:.4rem}
+p{margin-bottom:1rem;color:var(--dim)}
+p:last-child{margin-bottom:0}
+a{color:var(--ice);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── proyectos ──────────────────────────────────────────────── */
+.card{
+  border:1px solid var(--rule);padding:1.8rem;margin-bottom:1.2rem;
+  background:var(--panel);position:relative;overflow:hidden;
+  transition:border-color .25s;
+}
+.card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--ice),var(--violet));
+  opacity:0;transition:opacity .25s;
+}
+.card:hover{border-color:var(--rule-lit)}
+.card:hover::before{opacity:1}
+
+.card-top{display:flex;justify-content:space-between;align-items:baseline;
+  gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.badge{font:500 .6rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  padding:.3rem .55rem;border:1px solid var(--rule-lit);color:var(--faint);
+  white-space:nowrap}
+.badge[data-live]{color:var(--brass);border-color:rgba(224,179,84,.35)}
+.badge[data-done]{color:var(--violet);border-color:rgba(166,120,255,.32)}
+.stack{font:400 .72rem/1.6 var(--mono);color:var(--faint);margin-bottom:.9rem}
+.card p{font-size:.94rem}
+
+.numbers{display:flex;gap:2rem;margin:1.2rem 0;flex-wrap:wrap}
+.num{display:flex;flex-direction:column}
+.num b{font:500 1.35rem/1 var(--sans);color:var(--ice)}
+.num span{font:400 .64rem/1.4 var(--mono);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);margin-top:.3rem}
+
+.card-links{display:flex;gap:1.3rem;margin-top:1.1rem;
+  font:400 .8rem/1 var(--sans)}
+
+/* ── listas de dos columnas ─────────────────────────────────── */
+.rows{border-top:1px solid var(--rule)}
+.row{display:flex;justify-content:space-between;gap:1.5rem;padding:.85rem 0;
+  border-bottom:1px solid var(--rule);font-size:.94rem}
+.row span:last-child{color:var(--faint);white-space:nowrap;
+  font:400 .78rem/1.6 var(--mono)}
+
+/* ── entrada al hacer scroll ────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .dot{animation:none}
+}
+
+footer{padding:3rem 0 5rem;border-top:1px solid var(--rule);
+  font:400 .76rem/1.7 var(--mono);color:var(--faint);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </style>
 </head>
 <body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">D.M.V</span>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="wrap">
 
 <header>
-  <h1>Diego</h1>
-  <p class="tag">AI · Robotics · Software. Building things in Madrid.</p>
+  <div class="status"><span class="dot"></span>Madrid · building</div>
+  <h1>I build systems that<br>run on <em>my own machine</em>.</h1>
+  <p class="lede">
+    I'm seventeen. Right now that mostly means <strong>KAIROS</strong> — a
+    personal AI assistant with seventeen agents that controls my desktop,
+    remembers my context, and writes patches to its own source code under
+    supervision.
+  </p>
+  <div class="cta">
+    <a href="#work" data-primary>See the work</a>
+    <a href="https://github.com/didimacveg">GitHub</a>
+    <a href="https://www.linkedin.com/in/diegomac%C3%ADasvega/">LinkedIn</a>
+  </div>
 </header>
 
-<section>
-  <h2>About</h2>
-  <p>
-    I'm seventeen and I build systems. Right now that mostly means KAIROS —
-    a local-first AI assistant that runs on my own hardware, controls my
-    desktop, and modifies its own source code under supervision.
-  </p>
-  <p>
-    I'm interested in the part of AI that touches the physical world:
-    robotics, control, perception. I want to study that somewhere it's taken
-    seriously, and eventually build something of my own.
-  </p>
-</section>
+<section id="work" class="reveal">
+  <h2>Work</h2>
 
-<section>
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>KAIROS</h3>
-    <p class="meta">Python · FastAPI · Postgres/pgvector · Next.js · Docker</p>
+  <article class="card">
+    <div class="card-top">
+      <h3>KAIROS</h3>
+      <span class="badge">Active</span>
+    </div>
+    <div class="stack">Python · FastAPI · Postgres/pgvector · Next.js · Docker</div>
     <p>
-      A personal AI assistant that runs entirely on my machine. Seventeen
-      agents, semantic memory, voice in and out, desktop control, and a
-      self-modification loop that writes its own patches, tests them in an
-      isolated sandbox, and waits for my approval before applying anything.
+      A local-first AI assistant. Seventeen agents behind an orchestrator,
+      semantic memory over pgvector, wake-word voice, desktop control through
+      a closed whitelist, Gmail and Calendar, and a self-modification loop
+      that writes patches, tests them in an isolated sandbox, reads the
+      failures, fixes them, and waits for my approval.
     </p>
     <p>
-      Seventy-six build phases, every architectural decision documented —
-      including the ones I got wrong.
+      Every architectural decision is documented as it was made — including
+      the ones I got wrong, and what they cost.
     </p>
-    <div class="links">
+    <div class="numbers">
+      <div class="num"><b>17</b><span>agents</span></div>
+      <div class="num"><b>300+</b><span>tests</span></div>
+      <div class="num"><b>77</b><span>build phases</span></div>
+    </div>
+    <div class="card-links">
       <a href="https://github.com/didimacveg/kairos">Source</a>
       <a href="https://github.com/didimacveg/kairos/tree/main/docs/adr">Decision records</a>
     </div>
-  </div>
+  </article>
 
-  <div class="project">
-    <h3>GetSympto</h3>
-    <p class="meta">Next.js · Supabase · Claude Haiku · Stripe · Vercel</p>
+  <article class="card">
+    <div class="card-top">
+      <h3>GetSympto+</h3>
+      <span class="badge" data-done>Finished · paused</span>
+    </div>
+    <div class="stack">Next.js · Supabase · Claude Haiku · Stripe · Vercel</div>
     <p>
-      An AI-powered symptom analysis tool. Users describe what they feel
-      and select the affected area on an interactive body map; the app
-      returns possible causes, an urgency level and recommended next
-      steps in four languages. Deployed in production, anonymous by
-      default. Explicitly an information tool, not a diagnostic one.
+      Symptom orientation platform. Users describe what they feel and pick the
+      affected area on an interactive body map; the app returns possible
+      causes, an urgency level and next steps — in four languages, anonymous
+      by default.
     </p>
-    <div class="links">
+    <p>
+      Reached a functional MVP and shipped to production. Paused: the payment
+      providers I'd built around rejected the app for being health-adjacent,
+      which forced a migration to Stripe that I haven't finished. Technical
+      feasibility doesn't guarantee business feasibility — that's the most
+      useful thing this project taught me.
+    </p>
+    <div class="card-links">
       <a href="https://getsympto.app">Live site</a>
       <a href="https://github.com/didimacveg">Source</a>
     </div>
-  </div>
+  </article>
 </section>
 
-<section>
-  <h2>Education</h2>
-  <div class="row"><span>Bachillerato, Ciencias y Tecnología</span><span>2025–2027</span></div>
-  <div class="row"><span>CS50x — Harvard, via edX</span><span>in progress</span></div>
-</section>
-
-<section>
-  <h2>Certifications</h2>
-  <div class="row"><span>Cambridge C1 Advanced — English</span><span>2024</span></div>
-</section>
-
-<section>
-  <h2>Contact</h2>
+<section id="about" class="reveal">
+  <h2>About</h2>
   <p>
-    <a href="mailto:tu@correo.com">Email</a> ·
-    <a href="https://github.com/didimacveg">GitHub</a> ·
-    <a href="https://linkedin.com/in/tu-usuario-linkedin">LinkedIn</a>
+    I'm interested in the part of AI that touches the physical world:
+    robotics, control, perception. Software that only moves data around stops
+    being interesting to me fairly quickly.
+  </p>
+  <p>
+    Most of what I know is self-taught, which shows in both directions — I
+    can build a distributed system with agents and a sandbox, and I still
+    have gaps a formal education would have closed. That's part of why I want
+    to study this somewhere it's taken seriously.
+  </p>
+  <p>
+    I use AI heavily as a development tool and I'd rather say so than pretend
+    otherwise. The architecture, the trade-offs and the decisions about what
+    to build are mine, and I can defend every one of them.
   </p>
 </section>
 
+<section id="background" class="reveal">
+  <h2>Background</h2>
+  <div class="rows">
+    <div class="row"><span>Bachillerato — Sciences &amp; Technology</span><span>2025–2027</span></div>
+    <div class="row"><span>CS50x — Harvard, via edX</span><span>in progress</span></div>
+    <div class="row"><span>Cambridge C1 Advanced — English</span><span>2024</span></div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
+  <p>
+    Open to internships, collaborations, or a conversation about any of this.
+  </p>
+  <div class="cta">
+    <a href="mailto:didimacveg@gmail.com" data-primary>didimacveg@gmail.com</a>
+    <a href="https://github.com/didimacveg">GitHub</a>
+    <a href="https://www.linkedin.com/in/diegomac%C3%ADasvega/">LinkedIn</a>
+  </div>
+</section>
+
 <footer>
-  Last updated September 2026.
+  <span>Diego Macías Vega — Madrid</span>
+  <span>Updated September 2026</span>
 </footer>
 
 </div>
+
+<script>
+// Las secciones entran al acercarse al viewport. Una sola pasada: una vez
+// visibles se dejan de observar, para no gastar ciclos en cada scroll.
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
 </body>
 </html>
