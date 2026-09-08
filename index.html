@@ -204,6 +204,38 @@ footer{padding:3rem 0 5rem;border-top:1px solid var(--rule);
 
   <article class="card">
     <div class="card-top">
+      <h3>gravity-lab</h3>
+      <span class="badge" data-done>Shipped</span>
+    </div>
+    <div class="stack">C++17 · CMake · raylib · JavaScript · GitHub Actions</div>
+    <p>
+      An N-body simulator of the Solar System, validated against astronomical
+      measurement rather than eyeballed. Real J2000 initial conditions,
+      four integrators, and a black-hole module that uses the Schwarzschild
+      innermost stable circular orbit as its capture criterion.
+    </p>
+    <p>
+      With a first post-Newtonian correction enabled it reproduces the
+      anomalous precession of Mercury's perihelion — the discrepancy Le
+      Verrier measured in 1859 and general relativity explained in 1915.
+      The control case, with no perturbations and no relativity, returns
+      exactly zero: without that, the rest would be numerical error rather
+      than physics.
+    </p>
+    <div class="numbers">
+      <div class="num"><b>42.810&Prime;</b><span>Mercury precession · 42.98 measured</span></div>
+      <div class="num"><b>0.4%</b><span>error vs accepted value</span></div>
+      <div class="num"><b>31</b><span>validation cases</span></div>
+    </div>
+    <div class="card-links">
+      <a href="https://didimacveg.github.io/gravity-lab/">Live simulator</a>
+      <a href="https://github.com/didimacveg/gravity-lab">Source</a>
+      <a href="https://github.com/didimacveg/gravity-lab#symplectic-vs-non-symplectic-integration">Integrator benchmarks</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-top">
       <h3>GetSympto+</h3>
       <span class="badge" data-done>Finished · paused</span>
     </div>
