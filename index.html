@@ -142,8 +142,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <p class="lede">I build software that has to be right about the physical world — and I
         check it against measurement, not against my own expectations. An N-body
         simulator that reproduces Mercury's relativistic precession, a local-first AI
-        assistant that tests its own patches, and a health-guidance app shipped to
-        production in four languages.</p>
+        assistant that tests its own patches, and TraceGuard, which checks every firmware
+        change against a product's safety rules.</p>
       <p class="facts">
         <span>EU citizen</span>
         <span>ES native · EN C1 · ZH YCT 2</span>
@@ -185,7 +185,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <dl class="side">
         <dt>Interests</dt><dd>Robotics, computational physics, applied AI, quantum physics and quantum computing</dd>
         <dt>Currently</dt><dd>Final years of Bachillerato · CS50x (Harvard, online)</dd>
-        <dt>Also building</dt><dd>TraceGuard, an MVP that checks firmware changes against safety requirements</dd>
+        <dt>Founder of</dt><dd>TraceGuard, compliance auditing for hardware and robotics firmware</dd>
       </dl>
     </div>
   </div>
@@ -194,46 +194,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
 <section id="projects" aria-labelledby="projects-h">
   <div class="wrap">
     <div class="sec-head"><span class="n">02</span><h2 id="projects-h">Projects</h2></div>
-
-    <article class="project" aria-labelledby="p-gl">
-      <div class="p-head"><h3 id="p-gl">gravity-lab</h3><span class="status">C++17 · validated</span></div>
-      <p class="one">An N-body simulator of the Solar System, checked against astronomical measurement rather than eyeballed.</p>
-      <dl class="psrt">
-        <dt>Problem</dt>
-        <dd>An orbit simulation always <em>looks</em> plausible. A poor integrator invents
-          effects of its own: at a careless time step this code manufactures 67″ per century
-          of spurious perihelion precession — more than the relativistic effect I wanted to
-          measure. Without validation, a pretty animation proves nothing.</dd>
-        <dt>Solution</dt>
-        <dd><ul>
-          <li>Real J2000 initial conditions (planets, dwarf planets, comets) in 3D, barycentric frame.</li>
-          <li>Four integrators compared head to head; the default is <strong>Yoshida 4</strong>,
-            a fourth-order symplectic method, because its energy error stays bounded instead of drifting.</li>
-          <li>First post-Newtonian correction and solar J2; a black-hole module with an
-            ISCO-based capture criterion; adaptive sub-stepping for close encounters.</li>
-          <li>A validation suite that tests conservation laws, convergence order and Kepler's
-            third law on <em>simulated</em> orbits, run on GCC and Clang in CI.</li>
-        </ul></dd>
-        <dt>Technology</dt>
-        <dd class="tags"><span>C++17</span><span>CMake</span><span>Numerical methods</span><span>JavaScript (browser build)</span><span>Python / matplotlib</span><span>GitHub Actions</span></dd>
-        <dt>Result</dt>
-        <dd>
-          <div class="nums">
-            <div><b>42.81″</b><span>per century, Mercury (GR)</span></div>
-            <div><b>0.4 %</b><span>error vs 42.98″ accepted</span></div>
-            <div><b>4.00</b><span>measured order, Yoshida 4</span></div>
-            <div><b>40</b><span>validation tests</span></div>
-          </div>
-          The no-perturbation control returns exactly 0″ of precession; angular momentum is
-          conserved to ~10⁻¹⁴ on the full system; simulated planetary periods match the
-          observed ones (inner planets within 2×10⁻⁵).
-        </dd>
-      </dl>
-      <div class="links">
-        <a class="btn" href="https://github.com/didimacveg/gravity-lab">Repository →</a>
-        <a class="btn alt" href="https://didimacveg.github.io/gravity-lab/">Live simulator</a>
-      </div>
-    </article>
 
     <article class="project" aria-labelledby="p-k">
       <div class="p-head"><h3 id="p-k">KAIROS</h3><span class="status">Python · local-first</span></div>
@@ -276,8 +236,85 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       </div>
     </article>
 
+    <article class="project" aria-labelledby="p-tg">
+      <div class="p-head"><h3 id="p-tg">TraceGuard</h3><span class="status">Founder · deployed MVP</span></div>
+      <p class="one">Continuous compliance auditing for physical products: every firmware change checked against the product's safety rules, in seconds.</p>
+      <dl class="psrt">
+        <dt>Problem</dt>
+        <dd>Hardware teams change code at software speed; compliance moves at paper speed.
+          When an engineer raises a safety parameter in firmware — a thermal cut-off, an
+          altitude ceiling — weeks can pass before anyone notices it broke a risk assessment
+          or a regulation.</dd>
+        <dt>Solution</dt>
+        <dd><ul>
+          <li>A push to a connected repository is analysed against a <strong>machine-readable rule set</strong>
+            (EU Cyber Resilience Act, IEC&nbsp;61508, a company's own risk assessment).</li>
+          <li>A breach opens a GitHub or Jira ticket quoting the exact line and the rule; every decision lands in an audit trail.</li>
+          <li><strong>The model never has the last word:</strong> a deterministic layer discards any finding
+            whose rule doesn't exist or whose evidence doesn't appear literally in the diff. Severity comes
+            from the customer's document, not from the model.</li>
+          <li>Hexagonal architecture enforced by a lint rule; idempotent webhooks (atomic
+            <code>INSERT … ON CONFLICT</code>); tenant secrets encrypted with AES-256-GCM.</li>
+        </ul></dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>TypeScript (strict)</span><span>Next.js</span><span>Hexagonal architecture</span><span>Supabase / Postgres</span><span>GitHub App</span><span>Jira</span><span>Claude API</span></dd>
+        <dt>Result</dt>
+        <dd>
+          <div class="nums">
+            <div><b>100 %</b><span>precision &amp; recall, 30 labelled commits</span></div>
+            <div><b>10 / 10</b><span>unseen holdout commits</span></div>
+            <div><b>&lt; 5 s</b><span>median, push to verdict</span></div>
+            <div><b>50+</b><span>engineers &amp; CTOs contacted</span></div>
+          </div>
+          Validated the problem through 50+ cold conversations with European hardware engineers
+          and CTOs. Writing rules that also state what does <em>not</em> breach them took precision
+          from 57&nbsp;% to 100&nbsp;%. Deployed; no external users yet.
+        </dd>
+      </dl>
+      <div class="links">
+        <a class="btn" href="https://traceguard.eu">traceguard.eu →</a>
+      </div>
+    </article>
+
+    <article class="project" aria-labelledby="p-ch">
+      <div class="p-head"><h3 id="p-ch">Chess trainer</h3><span class="status">In development</span></div>
+      <p class="one">A local training app for deliberate chess practice: understanding <em>why</em> a move works, not memorising it.</p>
+      <dl class="psrt">
+        <dt>Problem</dt>
+        <dd>Most training tools tell you the best move but not why, don't know which mistakes
+          <em>you</em> keep making, and generate explanations that sound right without being checked.</dd>
+        <dt>Solution</dt>
+        <dd><ul>
+          <li>Eleven modules: an adaptive diagnostic (Glicko-2 per skill area), analysis of my own games
+            with lichess-style move classification, a thinking routine (threat → candidates → move),
+            calculation without moving pieces, tactics, openings, pawn structures, endgames and play against
+            human-like bots.</li>
+          <li><strong>Every explanation is built from verifiable facts</strong> (Stockfish, endgame tablebase
+            or board rules); a test checks that each sentence cites a fact and that every move, square or
+            number it mentions is in that fact. Optional AI rewording is discarded if it adds anything.</li>
+          <li>Spaced repetition (FSRS) brings mistakes back at the right time; runs locally, no accounts.</li>
+        </ul></dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>TypeScript</span><span>Next.js</span><span>SQLite + Drizzle</span><span>Stockfish (WASM &amp; native)</span><span>chess.js</span><span>FSRS</span><span>Vitest</span><span>Playwright</span></dd>
+        <dt>Result</dt>
+        <dd>
+          <div class="nums">
+            <div><b>11</b><span>training modules</span></div>
+            <div><b>12</b><span>pawn structures classified</span></div>
+            <div><b>29</b><span>theoretical endgames</span></div>
+            <div><b>100 %</b><span>explanations fact-checked by test</span></div>
+          </div>
+          All modules implemented and tested, with end-to-end tests in a real browser. Next step:
+          using it on my own games and validating the tactic detector against lichess's official themes.
+        </dd>
+      </dl>
+      <div class="links">
+        <span class="btn alt" aria-disabled="true">Repository private while in development</span>
+      </div>
+    </article>
+
     <article class="project" aria-labelledby="p-gs">
-      <div class="p-head"><h3 id="p-gs">GetSympto</h3><span class="status">Shipped · paused</span></div>
+      <div class="p-head"><h3 id="p-gs">GetSympto</h3><span class="status">Completed</span></div>
       <p class="one">A web app that turns a symptom description into structured, understandable guidance — orientation, never diagnosis.</p>
       <dl class="psrt">
         <dt>Problem</dt>
@@ -298,13 +335,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         <dt>Result</dt>
         <dd>
           <div class="nums">
-            <div><b>Live</b><span>in production</span></div>
+            <div><b>Done</b><span>production MVP</span></div>
             <div><b>4</b><span>languages</span></div>
             <div><b>0</b><span>accounts needed to use it</span></div>
             <div><b>SVG</b><span>interactive body map</span></div>
           </div>
-          Paused after payment providers rejected a health-adjacent product — technical
-          feasibility doesn't guarantee business feasibility. I also documented a race condition
+          Completed as a production MVP. Payment providers rejected a health-adjacent
+          product, which taught me that technical feasibility doesn't guarantee business feasibility. I also documented a race condition
           in the daily usage limit (check-then-increment is not atomic under concurrent serverless
           requests) and the atomic database operation that fixes it.
         </dd>
@@ -312,6 +349,46 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <div class="links">
         <a class="btn" href="https://github.com/didimacveg/getsympto">Repository →</a>
         <a class="btn alt" href="https://getsympto.app">getsympto.app</a>
+      </div>
+    </article>
+
+    <article class="project" aria-labelledby="p-gl">
+      <div class="p-head"><h3 id="p-gl">gravity-lab</h3><span class="status">C++17 · validated</span></div>
+      <p class="one">An N-body simulator of the Solar System, checked against astronomical measurement rather than eyeballed.</p>
+      <dl class="psrt">
+        <dt>Problem</dt>
+        <dd>An orbit simulation always <em>looks</em> plausible. A poor integrator invents
+          effects of its own: at a careless time step this code manufactures 67″ per century
+          of spurious perihelion precession — more than the relativistic effect I wanted to
+          measure. Without validation, a pretty animation proves nothing.</dd>
+        <dt>Solution</dt>
+        <dd><ul>
+          <li>Real J2000 initial conditions (planets, dwarf planets, comets) in 3D, barycentric frame.</li>
+          <li>Four integrators compared head to head; the default is <strong>Yoshida 4</strong>,
+            a fourth-order symplectic method, because its energy error stays bounded instead of drifting.</li>
+          <li>First post-Newtonian correction and solar J2; a black-hole module with an
+            ISCO-based capture criterion; adaptive sub-stepping for close encounters.</li>
+          <li>A validation suite that tests conservation laws, convergence order and Kepler's
+            third law on <em>simulated</em> orbits, run on GCC and Clang in CI.</li>
+        </ul></dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>C++17</span><span>CMake</span><span>Numerical methods</span><span>JavaScript (browser build)</span><span>Python / matplotlib</span><span>GitHub Actions</span></dd>
+        <dt>Result</dt>
+        <dd>
+          <div class="nums">
+            <div><b>42.81″</b><span>per century, Mercury (GR)</span></div>
+            <div><b>0.4 %</b><span>error vs 42.98″ accepted</span></div>
+            <div><b>4.00</b><span>measured order, Yoshida 4</span></div>
+            <div><b>40</b><span>validation tests</span></div>
+          </div>
+          The no-perturbation control returns exactly 0″ of precession; angular momentum is
+          conserved to ~10⁻¹⁴ on the full system; simulated planetary periods match the
+          observed ones (inner planets within 2×10⁻⁵).
+        </dd>
+      </dl>
+      <div class="links">
+        <a class="btn" href="https://github.com/didimacveg/gravity-lab">Repository →</a>
+        <a class="btn alt" href="https://didimacveg.github.io/gravity-lab/">Live simulator</a>
       </div>
     </article>
   </div>
@@ -338,7 +415,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <div class="sec-head"><span class="n">04</span><h2 id="contact-h">Contact</h2></div>
     <p>Admissions teams, engineers and anyone curious about the projects above: I'm happy to
       walk through any decision in them.</p>
-    <a class="email" href="mailto:didimacveg@gmail.com">didimacveg@gmail.com</a>
+    <a class="email" href="mailto:dmaciasveg@gmail.com">dmaciasveg@gmail.com</a>
     <div class="channels">
       <a class="btn alt" href="https://github.com/didimacveg">GitHub</a>
       <a class="btn alt" href="https://www.linkedin.com/in/diegomac%C3%ADasvega/">LinkedIn</a>
