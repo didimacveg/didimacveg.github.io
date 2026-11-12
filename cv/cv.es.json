@@ -1,0 +1,105 @@
+{
+  "output": "Diego_Macias_Vega_CV_ES.pdf",
+  "name": "Diego Macías Vega",
+  "tagline": "Estudiante de 2.º de Bachillerato de Ciencias en Madrid. Solicitudes para 2027: Ingeniería Aeroespacial, Física Aplicada y Advanced Technology",
+  "contact": [
+    "Madrid, España · ciudadano de la UE",
+    "<a href='mailto:dmaciasveg@gmail.com'>dmaciasveg@gmail.com</a>",
+    "<a href='https://didimacveg.github.io'>didimacveg.github.io</a>",
+    "<a href='https://github.com/didimacveg'>github.com/didimacveg</a>",
+    "<a href='https://www.linkedin.com/in/diegomac%C3%ADasvega/'>LinkedIn</a>"
+  ],
+  "sections": [
+    {
+      "title": "Perfil",
+      "lines": [
+        "Construyo software con física y matemáticas y lo compruebo contra medidas: líneas base reproducidas, pruebas de validación y resultados negativos publicados. Trabajo con asistentes de programación de IA y lo digo: el código es en gran parte de la IA; las preguntas, las reglas de cada proyecto, las decisiones y la responsabilidad de cada afirmación son mías."
+      ]
+    },
+    {
+      "title": "Formación",
+      "entries": [
+        {
+          "head": "Bachillerato de Ciencias y Tecnología",
+          "org": "IES San Agustín del Guadalix, Madrid",
+          "right": "2025 – 2027",
+          "bullets": ["Matemáticas II, Física, Tecnología e Ingeniería, Informática. Último curso; finalizo en junio de 2027."]
+        },
+        {
+          "head": "Solicitudes universitarias, inicio en septiembre de 2027",
+          "org": "Países Bajos",
+          "right": "en preparación",
+          "bullets": ["BSc Aerospace Engineering, TU Delft (examen de selección) · BSc Applied Physics, TU Eindhoven · BSc Advanced Technology, Universidad de Twente."]
+        },
+        {
+          "head": "CS50x: Introducción a la Informática",
+          "org": "Universidad de Harvard, en línea",
+          "right": "2026, en curso",
+          "bullets": []
+        }
+      ]
+    },
+    {
+      "title": "Proyectos",
+      "entries": [
+        {
+          "head": "RAAN · Open Orbital Intelligence Lab",
+          "org": "Python, TypeScript, WebGL, LightGBM",
+          "right": "2026",
+          "bullets": [
+            "Laboratorio reproducible con datos orbitales públicos. Gemelo digital de 20.152 objetos catalogados propagados con SGP4; propagador comprobado con los 666 vectores de referencia de Vallado (diferencia máxima 3,5e-5 km).",
+            "Collision Avoidance Challenge de la ESA: predicción ingenua reproducida exactamente (L = 0,694). El mejor modelo obtiene 0,627 en el conjunto de test pero no supera la validación cruzada; se publica como resultado negativo.",
+            "Detección de maniobras en 15 satélites, dejando un satélite fuera en cada prueba: F1 0,81 (clasificador), 0,74 (línea base física), 0,09 (azar). Informe técnico de 6 páginas.",
+            "Código escrito en su mayor parte por un asistente de IA y revisado por una sesión independiente; yo fijé la pregunta y las reglas y respondo de cada afirmación."
+          ]
+        },
+        {
+          "head": "QEC Lab",
+          "org": "corrección de errores cuánticos",
+          "right": "2026, en curso",
+          "bullets": ["Laboratorio abierto que compara decodificadores neuronales con MWPM (emparejamiento perfecto de peso mínimo) en el código de superficie. En construcción; sin resultados todavía."]
+        },
+        {
+          "head": "gravity-lab",
+          "org": "C++17, métodos numéricos",
+          "right": "2026",
+          "bullets": [
+            "Simulador de N cuerpos del Sistema Solar validado contra medidas: reproduce la precesión relativista del perihelio de Mercurio (42,81 arcsec/siglo; valor aceptado 42,98, error 0,4 %).",
+            "Cuatro integradores comparados; Yoshida 4 (simpléctico) mantiene el error de energía en 1,4e-11 a 100 años. 31 casos de validación en CI. Versión web en línea."
+          ]
+        },
+        {
+          "head": "KAIROS",
+          "org": "Python, FastAPI, PostgreSQL + pgvector, Docker",
+          "right": "2026",
+          "bullets": ["Asistente personal de IA que funciona en local: 17 agentes, más de 300 tests, automodificación en un entorno aislado que nunca se fusiona sin mi aprobación. Arquitectura y decisiones mías (77 registros de decisión escritos); Claude como programador de apoyo."]
+        },
+        {
+          "head": "Otros",
+          "org": "",
+          "right": "2026",
+          "bullets": ["Entrenador de ajedrez (Stockfish y Maia, explicaciones verificadas por tests) · Quant Path (ejercicios y 110 problemas verificados por código para trading cuantitativo) · TraceGuard (cambios de firmware comprobados contra reglas de seguridad; MVP en pausa) · Sympto+ (web multilingüe de información de salud; en pausa)."]
+        }
+      ]
+    },
+    {
+      "title": "Experiencia",
+      "entries": [
+        {
+          "head": "Profesor particular",
+          "org": "Madrid",
+          "right": "actualidad",
+          "bullets": ["Clases individuales a alumnos de colegio e instituto."]
+        }
+      ]
+    },
+    {
+      "title": "Competencias, idiomas y otros",
+      "lines": [
+        "<b>Técnicas:</b> Python, C++17, TypeScript; integración numérica, propagación orbital (SGP4), gradient boosting y redes recurrentes, diseño de evaluaciones (líneas base, validación cruzada, bootstrap); Git, Linux/WSL, Docker, GitHub Actions.",
+        "<b>Idiomas:</b> español (nativo) · inglés, Cambridge C1 Advanced (186 puntos, obtenido a los 16 años) · chino, YCT 2.",
+        "<b>Deporte:</b> cinturón negro de judo; campeón de Madrid a los 12 años (ya no compito)."
+      ]
+    }
+  ]
+}
