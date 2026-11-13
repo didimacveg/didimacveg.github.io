@@ -1,7 +1,7 @@
 # Textos para LinkedIn
 
 Listos para copiar y pegar. Recomendación: perfil en **inglés** (lo leerán admisiones de
-Holanda e ingenieros de fuera de España); debajo de cada bloque tienes la versión en español
+los Países Bajos e ingenieros de fuera de España); debajo de cada bloque tienes la versión en español
 por si prefieres esa o quieres crear el perfil secundario en español que LinkedIn permite.
 
 Antes de pegar nada, lee cada frase y comprueba que es verdad tal cual. Si una frase de «qué
@@ -14,13 +14,13 @@ es mío» no describe lo que hiciste tú, cámbiala: en una entrevista te van a 
 **Inglés (recomendado; el límite del titular es de 220 caracteres):**
 
 ```
-Physics and engineering student, Madrid | Building RAAN, an open orbital-data lab | Applying for 2027: Aerospace Engineering, Applied Physics
+Final-year science student in Madrid · physics, AI and engineering | Building RAAN, an open orbital-data lab
 ```
 
 **Español:**
 
 ```
-Estudiante de Bachillerato de Ciencias, Madrid | Construyo RAAN, un laboratorio abierto de datos orbitales | Solicitudes 2027: Ing. Aeroespacial, Física Aplicada
+Estudiante de 2.º de Bachillerato de Ciencias en Madrid · física, IA e ingeniería | Construyo RAAN, un laboratorio abierto de datos orbitales
 ```
 
 ---
@@ -30,7 +30,7 @@ Estudiante de Bachillerato de Ciencias, Madrid | Construyo RAAN, un laboratorio 
 **Inglés:**
 
 ```
-I'm 17 and in my final year of the Sciences Bachillerato in Madrid. In September 2027 I want to start in the Netherlands: Aerospace Engineering at TU Delft, Applied Physics at TU/e or Advanced Technology at Twente.
+I'm 17 and in my final year of the Sciences Bachillerato in Madrid. In September 2027 I want to start in the Netherlands: Computer Science and Engineering at TU Delft, Applied Physics at TU Eindhoven or Advanced Technology at the University of Twente.
 
 I build software on physics and mathematics, and I check it against measurement instead of against my own expectations.
 
@@ -39,11 +39,11 @@ What I have built so far:
 • RAAN, an open lab on public orbital data: a digital twin of 20,152 catalogued objects, a collision-risk study on ESA's dataset and a manoeuvre detector. The naive baseline is reproduced first, and the result where my model did not beat it is published as it is.
 • gravity-lab, an N-body simulator in C++ that reproduces Mercury's relativistic precession within 0.4 % of the accepted value.
 • KAIROS, a local-first AI assistant with 17 agents and every design decision written down.
-• In progress: QEC Lab, on neural decoders for quantum error correction.
+• In progress: Syndrome Lab, neural decoders vs minimum-weight perfect matching on the surface code. Results and report to be published late November 2026.
 
 How I work: I use AI coding assistants heavily and I say so. Much of the code in these projects was written by an AI. What is mine is the question, the rules each project must obey (public data only, baselines first, negative results published), the decisions and the responsibility for every claim.
 
-Interests: space engineering, physics, machine learning and, in the long run, quantitative trading.
+Interests: superintelligence and robotics, physics (quantum above all), machine learning and AI, and mathematics.
 
 Also: Cambridge C1 Advanced, basic Chinese (YCT 2), black belt in judo, and I tutor school students.
 
@@ -53,20 +53,20 @@ Everything is at didimacveg.github.io. If you work in orbital dynamics, quantum 
 **Español:**
 
 ```
-Tengo 17 años y estudio 2.º de Bachillerato de Ciencias en Madrid. En septiembre de 2027 quiero empezar en Holanda: Aerospace Engineering en TU Delft, Applied Physics en TU/e o Advanced Technology en Twente.
+Tengo 17 años y estudio 2.º de Bachillerato de Ciencias en Madrid. En septiembre de 2027 quiero empezar en los Países Bajos: Computer Science and Engineering en TU Delft, Applied Physics en TU Eindhoven o Advanced Technology en la Universidad de Twente.
 
-Construyo software con física y matemáticas, y lo compruebo contra medidas en lugar de contra lo que yo espero que salga.
+Construyo software basado en física y matemáticas, y lo contrasto con medidas, no con lo que yo espero que salga.
 
 Lo que he construido hasta ahora:
 
 • RAAN, un laboratorio abierto con datos orbitales públicos: un gemelo digital de 20.152 objetos catalogados, un estudio de riesgo de colisión con el dataset de la ESA y un detector de maniobras. Primero se reproduce la línea base, y el resultado en el que mi modelo no la superó está publicado tal cual.
 • gravity-lab, un simulador de N cuerpos en C++ que reproduce la precesión relativista de Mercurio con un 0,4 % de error respecto al valor aceptado.
 • KAIROS, un asistente de IA que funciona en local, con 17 agentes y cada decisión de diseño por escrito.
-• En curso: QEC Lab, sobre decodificadores neuronales para corrección de errores cuánticos.
+• En curso: Syndrome Lab, decodificadores neuronales frente al emparejamiento perfecto de peso mínimo en el código de superficie. Los resultados y el informe se publicarán a finales de noviembre de 2026.
 
 Cómo trabajo: uso mucho los asistentes de programación de IA y lo digo. Gran parte del código de estos proyectos lo ha escrito una IA. Lo mío es la pregunta, las reglas que cada proyecto debe cumplir (solo datos públicos, líneas base primero, resultados negativos publicados), las decisiones y la responsabilidad de cada afirmación.
 
-Intereses: ingeniería espacial, física, machine learning y, a largo plazo, trading cuantitativo.
+Intereses: superinteligencia y robótica, física (sobre todo cuántica), machine learning e IA, y matemáticas.
 
 Además: Cambridge C1 Advanced, chino básico (YCT 2), cinturón negro de judo y doy clases particulares.
 
@@ -77,8 +77,8 @@ Todo está en didimacveg.github.io. Si trabajas en dinámica orbital, correcció
 
 ## 3. Sección «Proyectos»
 
-Para cada uno: **Nombre**, **Fechas**, **URL** y **Descripción**. Las URL de RAAN solo
-funcionan cuando hayas hecho público el repositorio `kessler` (ver `PASOS_PARA_DIEGO.md`).
+Para cada uno: **Nombre**, **Fechas**, **URL** y **Descripción**. Antes de pegar las URL de
+RAAN, ábrelas en una ventana privada del navegador (ver `PASOS_PARA_DIEGO.md`, paso 2).
 
 ### 3.1 RAAN · Open Orbital Intelligence Lab
 
@@ -109,19 +109,20 @@ Laboratorio abierto y reproducible con datos orbitales públicos. Proyecto de in
 Cómo se hizo: un asistente de IA (Claude Code) escribió la mayor parte del código y una segunda sesión independiente lo revisó y repitió todos los experimentos. Yo fijé la pregunta y las reglas (solo datos públicos, líneas base primero, resultados negativos publicados) y respondo de cada afirmación.
 ```
 
-### 3.2 QEC Lab
+### 3.2 Syndrome Lab
 
 - Fechas: nov. 2026 – actualidad
-- URL: ninguna todavía. **No lo añadas a LinkedIn hasta que haya algo que enseñar.** Cuando lo haya:
+- URL: ninguna todavía (el repositorio `syndrome-lab` es privado hasta finales de noviembre).
+  **No lo añadas a «Proyectos» hasta que el informe esté publicado.** Si lo añades antes, solo esto, sin cifras:
 
 ```
-In progress. An open lab for quantum error correction: neural decoders compared with minimum-weight perfect matching (MWPM) on the surface code, under one protocol and with the baseline reproduced first. No results yet; they will be published whichever way they go. Built with an AI coding assistant; the question and the rules are mine.
+In progress. Neural decoders vs minimum-weight perfect matching on the surface code, built with Stim and PyMatching. Results and report to be published late November 2026.
 ```
 
 Español:
 
 ```
-En curso. Laboratorio abierto de corrección de errores cuánticos: decodificadores neuronales comparados con MWPM (emparejamiento perfecto de peso mínimo) en el código de superficie, con un único protocolo y reproduciendo primero la línea base. Aún sin resultados; se publicarán salgan como salgan. Construido con un asistente de IA; la pregunta y las reglas son mías.
+En curso. Decodificadores neuronales frente al emparejamiento perfecto de peso mínimo (MWPM) en el código de superficie, con Stim y PyMatching. Los resultados y el informe se publicarán a finales de noviembre de 2026.
 ```
 
 ### 3.3 gravity-lab
@@ -143,14 +144,14 @@ Built with an AI coding assistant. Mine: the decision to validate against measur
 Español:
 
 ```
-Simulador de N cuerpos del Sistema Solar en C++17, validado contra medidas astronómicas.
+Simulador de N cuerpos del Sistema Solar en C++17, validado con medidas astronómicas.
 
 • Reproduce la precesión relativista del perihelio de Mercurio: 42,81 arcsec por siglo frente a los 42,98 aceptados (0,4 % de error). El control sin perturbaciones da exactamente cero.
 • Cuatro integradores comparados. Yoshida 4 (simpléctico, cuarto orden) mantiene el error de energía en 1,4e-11 a 100 años; Euler explícito deriva hasta el 8 %.
 • Módulo de agujero negro con un criterio de captura basado en la órbita circular estable más interna, y subdivisión adaptativa del paso en encuentros cercanos.
 • 31 casos de validación en CI; versión web en línea.
 
-Construido con un asistente de IA. Lo mío: la decisión de validar contra medidas, la elección de qué comprobar y la revisión de los resultados.
+Construido con un asistente de IA. Lo mío: la decisión de validar con medidas, la elección de qué comprobar y la revisión de los resultados.
 ```
 
 ### 3.4 KAIROS
@@ -301,16 +302,16 @@ unos días, haz **una** pregunta concreta.
 | 2 | Ingenieros de Space Situational Awareness (Neuraspace, LeoLabs, Indra, Deimos) | `space situational awareness engineer` |
 | 3 | Personal de la ESA Space Debris Office y de ESOC | `ESA Space Debris Office`, `ESOC flight dynamics` |
 | 4 | Autores del Collision Avoidance Challenge de la ESA y del benchmark de maniobras | Nombres en los artículos que cita el informe de RAAN |
-| 5 | Estudiantes de BSc Aerospace Engineering de TU Delft | Filtro Universidad: `Delft University of Technology` + `Aerospace Engineering` |
+| 5 | Estudiantes de BSc Computer Science and Engineering de TU Delft | Filtro Universidad: `Delft University of Technology` + `Computer Science and Engineering` |
 | 6 | Estudiantes españoles en TU Delft, TU/e o Twente | Mismo filtro + ubicación de origen España |
-| 7 | Miembros de equipos estudiantiles de Delft (DARE, Delfi Space) | `Delft Aerospace Rocket Engineering`, `Delfi` |
+| 7 | Miembros de equipos estudiantiles de Delft (robótica, espacio) | Búsqueda: `TU Delft student team` + `robotics` o `Delfi` |
 | 8 | Estudiantes de Applied Physics de TU/e | Filtro Universidad: `Eindhoven University of Technology` |
 | 9 | Estudiantes de Advanced Technology de Twente | Filtro Universidad: `University of Twente` + `Advanced Technology` |
 | 10 | Investigadores y doctorandos de QuTech (Delft) en corrección de errores cuánticos | `QuTech quantum error correction` |
 | 11 | Ingenieros de empresas de computación cuántica en Europa (IQM, Qilimanjaro, Quantum Inspire) | `quantum error correction engineer`, `Qilimanjaro` |
 | 12 | Ingenieros de startups espaciales españolas (PLD Space, Sateliot, Satlantis, FOSSA) | Nombre de la empresa + `engineer` |
 | 13 | Quant traders e investigadores en Ámsterdam (Optiver, IMC, Flow Traders, Da Vinci) | Empresa + `trader` o `quantitative researcher` |
-| 14 | Antiguos alumnos de institutos de Madrid que estudian ingeniería o física en Holanda | Filtro Universidad holandesa + `Madrid` |
+| 14 | Antiguos alumnos de institutos de Madrid que estudian ingeniería o física en los Países Bajos | Filtro Universidad holandesa + `Madrid` |
 | 15 | Profesores e investigadores de astrodinámica y física en universidades españolas (UPM, UC3M, UAM) | `astrodynamics UPM`, `space debris UC3M` |
 
 ### Mensajes
@@ -339,10 +340,10 @@ Hi [name]. I'm a 17-year-old student in Madrid. I reproduced the baseline of ESA
 Hi [name]. I'm a student using your [dataset/paper] in RAAN, an open orbital-data project, with credit and licence respected. Thank you for publishing it. I'd be glad to connect.
 ```
 
-**5. Estudiantes de Aerospace Engineering en TU Delft**
+**5. Estudiantes de Computer Science and Engineering en TU Delft**
 
 ```
-Hi [name]. I'm 17, from Madrid, applying to Aerospace Engineering at TU Delft for 2027. I'd like to follow how the first year really is. Glad to connect.
+Hi [name]. I'm 17, from Madrid, applying to Computer Science and Engineering at TU Delft for 2027. I'd like to follow how the first year really is. Glad to connect.
 ```
 
 **6. Españoles en TU Delft, TU/e o Twente**
@@ -354,7 +355,7 @@ Hola, [nombre]. Estoy en 2.º de Bachillerato en Madrid y quiero empezar en [uni
 **7. Equipos estudiantiles de Delft**
 
 ```
-Hi [name]. I'm applying to TU Delft AE for 2027 and [team] is one of the reasons. I build orbital and physics software on my own for now. Glad to connect and follow the team's work.
+Hi [name]. I'm applying to TU Delft for 2027 and [team] is one of the reasons. I build physics and AI software on my own for now. Glad to connect and follow the team's work.
 ```
 
 **8. Estudiantes de Applied Physics en TU/e**
@@ -372,13 +373,13 @@ Hi [name]. I'm 17, from Madrid, and Advanced Technology at Twente is one of my o
 **10. Investigadores de QuTech**
 
 ```
-Hi [name]. I'm a 17-year-old student starting an open project on neural decoders vs MWPM for the surface code. I read your work on [topic] and would be glad to connect.
+Hi [name]. I'm a 17-year-old student building an open project on neural decoders vs MWPM for the surface code. I read your work on [topic] and would be glad to connect.
 ```
 
 **11. Empresas de computación cuántica**
 
 ```
-Hi [name]. I'm a student in Madrid starting an open project on surface-code decoding. I follow what [company] is doing on [topic] and would be glad to have you in my network.
+Hi [name]. I'm a student in Madrid building an open project on surface-code decoding. I follow what [company] is doing on [topic] and would be glad to have you in my network.
 ```
 
 **12. Startups espaciales españolas**
@@ -390,13 +391,13 @@ Hola, [nombre]. Tengo 17 años y construyo software de física y órbitas (RAAN,
 **13. Quant traders e investigadores**
 
 ```
-Hi [name]. I'm 17, heading to study physics or engineering in the Netherlands in 2027, and I train probability and mental maths with trading as a long-term goal. Glad to connect.
+Hi [name]. I'm 17, aiming to study in the Netherlands from 2027, and I train probability and mental maths out of interest in quantitative trading. Glad to connect.
 ```
 
-**14. Antiguos alumnos de Madrid en Holanda**
+**14. Antiguos alumnos de Madrid en los Países Bajos**
 
 ```
-Hola, [nombre]. Soy de Madrid, estoy en 2.º de Bachillerato y quiero estudiar en Holanda en 2027. Ver que alguien de aquí lo ha hecho me anima. Me gustaría conectar. Gracias.
+Hola, [nombre]. Soy de Madrid, estoy en 2.º de Bachillerato y quiero estudiar en los Países Bajos en 2027. Ver que alguien de aquí lo ha hecho me anima. Me gustaría conectar. Gracias.
 ```
 
 **15. Profesores e investigadores en España**
