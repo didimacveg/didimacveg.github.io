@@ -1,6 +1,7 @@
 # Revisión de repositorios
 
-Fecha: 12 de noviembre de 2026. No he cambiado nada en ningún repositorio que no sea este:
+Fecha: 12 de noviembre de 2026 (nombres actualizados el 13 de noviembre: QEC Lab pasa a llamarse
+Syndrome Lab, repositorio `syndrome-lab`; el estado de `kessler` está en `PASOS_PARA_DIEGO.md`). No he cambiado nada en ningún repositorio que no sea este:
 esto es solo la lista de qué arreglar.
 
 **Qué he podido leer y qué no**
@@ -8,7 +9,7 @@ esto es solo la lista de qué arreglar.
 - Repositorios **públicos** en `github.com/didimacveg`: `didimacveg.github.io`, `gravity-lab`,
   `kairos` y `getsympto`. Leídos enteros (README, licencias, documentación, workflows).
 - Repositorios **privados** que nombraste, leídos solo para describirlos en la web: `kessler`
-  (RAAN), `qec-lab`, `quant-path`, `compliance-tracer` (TraceGuard), `arete` y `chess-trainer`.
+  (RAAN), `syndrome-lab`, `quant-path`, `compliance-tracer` (TraceGuard), `arete` y `chess-trainer`.
 - **No leídos:** tus otros seis repositorios privados, los que no nombraste. No aparecen en
   la web ni opino sobre ellos, y no pongo aquí sus nombres porque este archivo es público.
 - **No he podido comprobar desde aquí:** la descripción, los temas («topics») y la web que
@@ -34,7 +35,7 @@ gh auth login
 | Orden | Proyecto | Repositorio | Dónde va en la web | Motivo |
 |---|---|---|---|---|
 | 1 | RAAN | `kessler` (privado) | Destacado, arriba | El más sólido: resultados reproducibles, un resultado negativo bien explicado e informe. **Hay que hacerlo público.** |
-| 2 | QEC Lab | `qec-lab` (privado) | Segundo, como «in progress» | El repositorio solo tiene el commit inicial: no hay nada que enseñar todavía, y la web lo dice así. |
+| 2 | Syndrome Lab | `syndrome-lab` (privado hasta finales de noviembre) | Segundo, como «in progress» | Sin cifras ni enlace hasta que se publiquen los resultados y el informe. |
 | 3 | gravity-lab | público | Ficha completa | Física validada contra medidas y demo en línea. Es el que mejor encaja con Applied Physics. |
 | 4 | KAIROS | público | Ficha completa | Es el más grande y el único en el que la arquitectura es claramente tuya. |
 | 5 | Chess trainer | `chess-trainer` (privado) | Ficha completa | Bien probado; la idea de «explicaciones verificadas» es buena. |
