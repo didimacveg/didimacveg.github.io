@@ -3,35 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diego Macías Vega — Engineering portfolio</title>
-<meta name="description" content="Diego Macías Vega, Madrid. Software that has to be right about the physical world: an N-body simulator validated against astronomy, a local-first AI assistant, and a multilingual health-guidance web app.">
-<meta name="color-scheme" content="light dark">
-<meta property="og:title" content="Diego Macías Vega — Engineering portfolio">
-<meta property="og:description" content="KAIROS, gravity-lab and GetSympto: problem, solution, technology and result for each.">
+<title>Diego Macías Vega · Physics and engineering portfolio</title>
+<meta name="description" content="Diego Macías Vega, Madrid. Software built on physics and mathematics and checked against measurement: an open orbital-data lab, an N-body simulator validated against astronomy, and a quantum error correction lab in progress.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101214">
+<meta property="og:title" content="Diego Macías Vega · Physics and engineering portfolio">
+<meta property="og:description" content="RAAN, gravity-lab, KAIROS and more: what each project does, what it measured, and how it was made.">
 <meta property="og:url" content="https://didimacveg.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://didimacveg.github.io/assets/raan/twin.webp">
 <link rel="canonical" href="https://didimacveg.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='5' fill='%23e8590c'/%3E%3Cellipse cx='16' cy='16' rx='14' ry='6' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101214'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%235EC8FF' stroke-width='1.3' transform='rotate(-30 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%235EC8FF' stroke-width='1.3' transform='rotate(30 16 16)'/%3E%3Ccircle cx='16' cy='16' r='3.2' fill='%233D8BFF'/%3E%3C/svg%3E">
 <style>
 :root{
-  --bg:#f6f5f1; --surface:#ffffff; --ink:#15171a; --ink-2:#4a4e55; --ink-3:#6b7079;
-  --rule:#dcdad3; --rule-2:#c5c2b9; --accent:#c2410c; --accent-ink:#9a3412; --link:#1d4ed8;
+  --bg:#101214; --surface:#171a1d; --ink:#eceae4; --ink-2:#b9b6ad; --ink-3:#8f8c84;
+  --rule:#2a2e33; --rule-2:#3a3f45;
+  /* single accent: Cherenkov blue */
+  --accent:#3D8BFF; --accent-ink:#5EC8FF;
   --mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --gutter:clamp(16px,4vw,48px); --max:68rem;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#101214; --surface:#171a1d; --ink:#eceae4; --ink-2:#b9b6ad; --ink-3:#8f8c84;
-    --rule:#2a2e33; --rule-2:#3a3f45; --accent:#f97316; --accent-ink:#fdba74; --link:#93b4ff;
-  }
-}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent-ink);text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+code{font:400 .88em var(--mono)}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
 .mono{font-family:var(--mono)}
 .skip{position:absolute;left:-999px}
@@ -40,26 +40,27 @@ a:hover{text-decoration-thickness:2px}
 /* header */
 header.top{border-bottom:1px solid var(--rule)}
 header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:1rem}
-.mark{font:600 .82rem/1 var(--mono);letter-spacing:.08em;color:var(--ink);text-decoration:none}
-nav ul{display:flex;gap:1.4rem;list-style:none}
-nav a{font:500 .8rem/1 var(--mono);color:var(--ink-2);text-decoration:none;letter-spacing:.04em}
-nav a:hover{color:var(--accent)}
-@media (max-width:640px){nav ul{gap:.9rem} nav li.opt{display:none}}
+.mark{font:600 .82rem/1 var(--mono);letter-spacing:.08em;color:var(--ink);text-decoration:none;white-space:nowrap}
+nav ul{display:flex;gap:1.3rem;list-style:none}
+nav a{font:500 .8rem/1 var(--mono);color:var(--ink-2);text-decoration:none;letter-spacing:.04em;display:inline-block;padding:.6rem 0}
+nav a:hover{color:var(--accent-ink)}
+@media (max-width:760px){nav ul{gap:.95rem} nav li.opt{display:none}}
 
 /* hero */
-.hero{padding:clamp(56px,10vw,112px) 0 clamp(40px,7vw,72px);border-bottom:1px solid var(--rule)}
+.hero{padding:clamp(48px,9vw,104px) 0 clamp(40px,7vw,72px);border-bottom:1px solid var(--rule)}
 .hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
-@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.orbit{max-width:320px}}
-.kicker{font:500 .78rem/1.4 var(--mono);color:var(--accent-ink);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.1rem}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.cloud{max-width:300px}}
+.kicker{font:500 .78rem/1.5 var(--mono);color:var(--accent-ink);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.1rem}
 h1{font:700 clamp(2.2rem,5.6vw,3.9rem)/1.02 var(--sans);letter-spacing:-.03em}
 .lede{margin-top:1.3rem;font-size:clamp(1.05rem,1.7vw,1.2rem);color:var(--ink-2);max-width:38rem}
 .facts{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
 .facts a{color:var(--ink-2)}
-.orbit{width:100%;max-width:400px;justify-self:center;color:var(--ink-3)}
-.orbit .planet{transform-origin:200px 200px;animation:spin 14s linear infinite}
-.orbit .planet.p2{animation-duration:39s}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.orbit .planet{animation:none}html{scroll-behavior:auto}}
+.cloud{position:relative;width:100%;max-width:400px;justify-self:center;aspect-ratio:1;color:var(--ink-3);font:400 11px/1.4 var(--mono)}
+.cloud canvas{position:absolute;inset:0;width:100%;height:100%}
+.cloud figcaption span{position:absolute;left:2px}
+.cloud .state{top:0}
+.cloud .eq{bottom:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* sections */
 section{padding:clamp(48px,8vw,88px) 0;border-bottom:1px solid var(--rule)}
@@ -76,14 +77,15 @@ h2{font:700 clamp(1.6rem,3.2vw,2.2rem)/1.1 var(--sans);letter-spacing:-.02em}
 .side dd{color:var(--ink)}
 
 /* projects */
-.project{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:clamp(20px,3.5vw,36px);margin-bottom:clamp(20px,3vw,32px)}
-.project:last-child{margin-bottom:0}
+.project{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:clamp(18px,3.5vw,36px);margin-bottom:clamp(20px,3vw,32px)}
+.project.feature{border-color:var(--rule-2);border-top:2px solid var(--accent)}
 .p-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.5rem 1rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;margin-bottom:1.2rem}
 h3{font:700 clamp(1.35rem,2.6vw,1.75rem)/1.15 var(--sans);letter-spacing:-.015em}
+h3 small{display:block;margin-top:.35rem;font:500 .78rem/1.4 var(--mono);letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase}
 .status{font:500 .74rem/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--rule-2);border-radius:3px;padding:.35rem .5rem}
 .one{color:var(--ink-2);font-size:1.05rem;margin-bottom:1.3rem;max-width:46rem}
 .psrt{display:grid;grid-template-columns:9.5rem 1fr;border-top:1px solid var(--rule)}
-.psrt dt,.psrt dd{padding:.9rem 0;border-bottom:1px solid var(--rule)}
+.psrt dt,.psrt dd{padding:.9rem 0;border-bottom:1px solid var(--rule);min-width:0}
 .psrt dt{font:600 .76rem/1.6 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent-ink)}
 .psrt dd{color:var(--ink-2)}
 .psrt dd strong{color:var(--ink);font-weight:600}
@@ -98,22 +100,33 @@ h3{font:700 clamp(1.35rem,2.6vw,1.75rem)/1.15 var(--sans);letter-spacing:-.015em
 .nums span{display:block;margin-top:.3rem;font:400 .72rem/1.35 var(--mono);color:var(--ink-3)}
 @media (max-width:640px){.nums{grid-template-columns:1fr 1fr}}
 .links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
-.btn{display:inline-flex;align-items:center;gap:.45rem;font:500 .84rem/1 var(--mono);padding:.7rem .9rem;border:1px solid var(--ink);border-radius:4px;color:var(--ink);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font:500 .84rem/1.2 var(--mono);padding:.7rem .9rem;border:1px solid var(--ink);border-radius:4px;color:var(--ink);text-decoration:none}
 .btn:hover{background:var(--ink);color:var(--bg)}
 .btn.alt{border-color:var(--rule-2);color:var(--ink-2)}
 .btn.alt:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
+span.btn.alt:hover{border-color:var(--rule-2);color:var(--ink-2)}
 
-/* education */
+/* screenshots */
+.shot{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--bg)}
+.shot a{display:block}
+.shot figcaption{padding:.6rem .8rem;border-top:1px solid var(--rule);font:400 .74rem/1.45 var(--mono);color:var(--ink-3)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,18px);margin:clamp(10px,2vw,18px) 0 .6rem}
+@media (max-width:640px){.shots{grid-template-columns:1fr}}
+.note{font:400 .74rem/1.5 var(--mono);color:var(--ink-3);margin-bottom:1.3rem}
+.sub{font:600 .78rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:clamp(32px,5vw,48px) 0 1rem}
+
+/* rows: education, certifications, writing, more work */
 .edu{list-style:none;border-top:1px solid var(--rule)}
 .edu li{display:grid;grid-template-columns:1fr auto;gap:.3rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--rule)}
 .edu b{font-weight:600}
 .edu .when{font:400 .84rem/1.6 var(--mono);color:var(--ink-3);white-space:nowrap}
-.edu .what{grid-column:1/-1;color:var(--ink-2);font-size:.95rem}
-@media (max-width:540px){.edu li{grid-template-columns:1fr}}
+.edu .what{grid-column:1/-1;color:var(--ink-2);font-size:.95rem;max-width:52rem}
+.edu .what + .what{color:var(--ink-3);font-size:.88rem}
+@media (max-width:540px){.edu li{grid-template-columns:1fr}.edu .when{white-space:normal}}
 
 /* contact */
 .contact p{color:var(--ink-2);max-width:40rem;margin-bottom:1.5rem}
-.contact .email{font:700 clamp(1.3rem,3.6vw,2.1rem)/1.2 var(--sans);letter-spacing:-.01em;color:var(--ink);text-decoration-color:var(--accent)}
+.contact .email{font:700 clamp(1.15rem,4.6vw,2.1rem)/1.2 var(--sans);letter-spacing:-.01em;color:var(--ink);text-decoration-color:var(--accent)}
 .channels{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
 footer{padding:2rem 0 3rem;font:400 .78rem/1.6 var(--mono);color:var(--ink-3)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
@@ -128,6 +141,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li class="opt"><a href="#education">Education</a></li>
+      <li class="opt"><a href="#certifications">Certifications</a></li>
+      <li><a href="#writing">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul></nav>
   </div>
@@ -137,32 +152,27 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="kicker">Madrid · prospective aerospace &amp; mechanical engineering student</p>
+      <p class="kicker">Madrid · applying for 2027 · Aerospace Engineering · Applied Physics · Advanced Technology</p>
       <h1>Diego Macías Vega</h1>
-      <p class="lede">I build software that has to be right about the physical world — and I
-        check it against measurement, not against my own expectations. An N-body
-        simulator that reproduces Mercury's relativistic precession, a local-first AI
-        assistant that tests its own patches, and TraceGuard, which checks every firmware
-        change against a product's safety rules.</p>
+      <p class="lede">I build software on physics and mathematics that has to be right about
+        the physical world, and I check it against measurement, not against my own
+        expectations. An open orbital-data lab that reproduces its baselines and publishes
+        its negative results, an N-body simulator that reproduces Mercury's relativistic
+        precession and, in progress, a lab for quantum error correction.</p>
       <p class="facts">
         <span>EU citizen</span>
         <span>ES native · EN C1 · ZH YCT 2</span>
         <a href="https://github.com/didimacveg">github.com/didimacveg</a>
+        <a href="cv/Diego_Macias_Vega_CV_EN.pdf">CV (PDF)</a>
       </p>
     </div>
-    <svg class="orbit" viewBox="0 0 400 400" role="img" aria-label="Diagram of an elliptical orbit around a star at one focus">
-      <title>An elliptical orbit with the star at one focus</title>
-      <g fill="none" stroke="currentColor">
-        <ellipse cx="200" cy="200" rx="170" ry="140" stroke-width="1" opacity=".55"/>
-        <ellipse cx="200" cy="200" rx="95" ry="88" stroke-width="1" stroke-dasharray="3 5" opacity=".55"/>
-        <line x1="20" y1="200" x2="380" y2="200" stroke-width=".75" stroke-dasharray="2 6" opacity=".5"/>
-      </g>
-      <circle cx="296" cy="200" r="11" fill="var(--accent)"/>
-      <text x="296" y="228" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="currentColor">focus</text>
-      <g class="planet"><circle cx="200" cy="60" r="6" fill="var(--ink)"/></g>
-      <g class="planet p2"><circle cx="295" cy="200" r="4" fill="var(--ink-2)" transform="translate(-95 0)"/></g>
-      <text x="22" y="390" font-family="ui-monospace,monospace" font-size="11" fill="currentColor">T² = 4π² a³ / G(M+m)</text>
-    </svg>
+    <figure class="cloud">
+      <canvas id="psi" role="img" aria-label="Probability cloud of a hydrogen atom orbital, drawn with particles sampled from the squared wavefunction"></canvas>
+      <figcaption>
+        <span class="state" id="psi-state">hydrogen · |ψ|²</span>
+        <span class="eq">iħ ∂ψ/∂t = Ĥψ</span>
+      </figcaption>
+    </figure>
   </div>
 </div>
 
@@ -171,21 +181,26 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <div class="sec-head"><span class="n">01</span><h2 id="about-h">About</h2></div>
     <div class="about">
       <div>
-        <p>I'm a Sciences &amp; Technology <em>Bachillerato</em> student in Madrid, applying
-          to <strong>aerospace and mechanical engineering</strong> programmes. What draws me
-          is the part of engineering where a model meets reality: orbits, control, safety
-          limits — places where "it looks right" is not an answer and a number has to agree
-          with a measurement.</p>
+        <p>I'm 17, in my final year of the Sciences <em>Bachillerato</em> in Madrid, and I'm
+          applying to start in the Netherlands in September 2027: <strong>Aerospace
+          Engineering</strong> at TU Delft, <strong>Applied Physics</strong> at TU/e or
+          <strong>Advanced Technology</strong> at Twente. What draws me is the part of
+          physics and engineering where a model meets reality: orbits, atoms, error
+          rates, safety limits. Places where "it looks right" is not an answer and a
+          number has to agree with a measurement.</p>
         <p>Most of what I know about software I taught myself by building complete systems.
-          I use AI heavily as a development tool and I say so openly; the architecture, the
-          trade-offs and the decisions about what to build are mine, and each project
-          documents them so they can be questioned.</p>
-        <p>Outside engineering: <strong>black belt in judo</strong>.</p>
+          I use AI heavily as a development tool and I say so openly: much of the code on
+          this page was written by an AI coding assistant. What is mine is the question,
+          the rules each project has to obey, the decisions about what to build and what
+          to cut, and the responsibility for every claim. Each project below states its
+          own split.</p>
+        <p>Outside engineering: <strong>black belt in judo</strong> and Madrid champion at
+          12 (I no longer compete). I also tutor school students privately.</p>
       </div>
       <dl class="side">
-        <dt>Interests</dt><dd>Robotics, computational physics, applied AI, quantum physics and quantum computing</dd>
-        <dt>Currently</dt><dd>Final years of Bachillerato · CS50x (Harvard, online)</dd>
-        <dt>Founder of</dt><dd>TraceGuard, compliance auditing for hardware and robotics firmware</dd>
+        <dt>Interests</dt><dd>Space engineering, physics (quantum physics in particular), machine learning, simulation and, in the long run, quantitative trading</dd>
+        <dt>Currently</dt><dd>2nd year of Bachillerato · preparing the TU Delft selection exam · CS50x (Harvard, online)</dd>
+        <dt>Building</dt><dd>RAAN, an open orbital-data lab, and QEC Lab, on quantum error correction</dd>
       </dl>
     </div>
   </div>
@@ -195,160 +210,114 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
   <div class="wrap">
     <div class="sec-head"><span class="n">02</span><h2 id="projects-h">Projects</h2></div>
 
-    <article class="project" aria-labelledby="p-k">
-      <div class="p-head"><h3 id="p-k">KAIROS</h3><span class="status">Python · local-first</span></div>
-      <p class="one">A modular, local-first personal AI assistant that talks, remembers, acts on my desktop — and proposes changes to its own code.</p>
+    <article class="project feature" aria-labelledby="p-raan">
+      <div class="p-head"><h3 id="p-raan">RAAN <small>Open Orbital Intelligence Lab</small></h3><span class="status">Flagship · research project</span></div>
+      <p class="one">An open, reproducible lab on public orbital data: a digital twin of the
+        catalogue, a collision-risk study on ESA's dataset and a manoeuvre detector, each
+        with its baseline reproduced first and its negative results published. A research
+        project, not an operational service.</p>
+
+      <figure class="shot">
+        <a href="assets/raan/twin.webp"><img src="assets/raan/twin.webp" width="1600" height="1000" alt="RAAN digital twin: a globe surrounded by 20,152 catalogued objects, with filters for object type, orbital regime and constellation, and a time bar"></a>
+        <figcaption>Orbital digital twin. Every dot is a catalogued object placed by SGP4 from its latest published elements. These are propagations, not live observations.</figcaption>
+      </figure>
+      <div class="shots">
+        <figure class="shot">
+          <a href="assets/raan/collision.webp"><img src="assets/raan/collision.webp" width="1400" height="960" loading="lazy" alt="Chart and table of the challenge loss for the naive forecast and three learned models, with bootstrap intervals"></a>
+          <figcaption>Collision lab: loss on ESA's official test set with 95 % bootstrap intervals.</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/raan/manoeuvres.webp"><img src="assets/raan/manoeuvres.webp" width="1400" height="1065" loading="lazy" alt="Timeline of the semi-major axis of Sentinel-3A with reported manoeuvres on one lane and detections on another"></a>
+          <figcaption>Manoeuvre detection: Sentinel-3A, operator-reported burns against detections.</figcaption>
+        </figure>
+      </div>
+      <p class="note">Screenshots of the RAAN web app, run of 12 November 2026. The app has a
+        light interface; lightness is inverted here to sit on this page. Nothing else is edited.</p>
+
       <dl class="psrt">
-        <dt>Problem</dt>
-        <dd>Cloud assistants know nothing about my context and send what they do learn to
-          someone else's servers; local ones run privately but know nothing about me. I wanted
-          one that does both, keeps working without internet, and can never execute something
-          it invented.</dd>
-        <dt>Solution</dt>
+        <dt>Question</dt>
+        <dd>How far can public data alone take you in space situational awareness, and how
+          do you know when a model is really better than doing nothing? Orbit visualisers
+          always look plausible and machine-learning scores are easy to flatter. The lab's
+          rules: public data only, every number regenerated by one command, baselines
+          reproduced before any model is trained.</dd>
+        <dt>Modules</dt>
         <dd><ul>
-          <li>A core plus <strong>specialised agents</strong> (voice, memory, reasoning,
-            documents, automation, security, devices), each a bounded context behind one contract.</li>
-          <li>Hybrid language model: cloud reasoning with <strong>automatic fallback to a local
-            model</strong> (Ollama) if the network fails before the first token. Embeddings never leave the machine.</li>
-          <li>Desktop control through a closed whitelist: the model <em>chooses</em> actions, it never writes commands.</li>
-          <li>Self-improvement pipeline: it writes a patch, tests it in a network-less sandbox,
-            and leaves a proposal; a separate service merges it only after my approval and a green test run.</li>
-          <li>Encrypted phone access through Tailscale, with no port opened to the internet.</li>
+          <li><strong>Orbital digital twin.</strong> A WebGL globe of every object with public
+            bulk elements, SGP4 running in a Web Worker, filters, a time bar and a provenance
+            card per object.</li>
+          <li><strong>Collision research lab.</strong> ESA's Collision Avoidance Challenge
+            dataset: the naive forecast reproduced, then gradient boosting and a recurrent
+            network scored with the official metric, bootstrap intervals, calibration and a
+            bias analysis.</li>
+          <li><strong>Manoeuvre detection.</strong> A physics step detector, CUSUM and a
+            gradient-boosted classifier on 15 satellites whose operators publish their burns,
+            evaluated leave-one-satellite-out.</li>
+          <li><strong>Reports.</strong> Small deterministic programs fill report templates
+            from pipeline outputs; a number guard rejects any figure not backed by a cited fact.</li>
         </ul></dd>
         <dt>Technology</dt>
-        <dd class="tags"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL + pgvector</span><span>Docker</span><span>Ollama</span><span>Tailscale</span></dd>
-        <dt>Result</dt>
+        <dd class="tags"><span>Python</span><span>SGP4</span><span>LightGBM</span><span>GRU</span><span>TypeScript</span><span>React</span><span>three.js / WebGL</span><span>Web Workers</span><span>GitHub Actions</span></dd>
+        <dt>Results</dt>
         <dd>
           <div class="nums">
-            <div><b>21</b><span>agents (16 core, 5 opt-in)</span></div>
-            <div><b>300+</b><span>automated tests</span></div>
-            <div><b>&lt; 2 s</b><span>real-time voice latency</span></div>
-            <div><b>77</b><span>decision records</span></div>
+            <div><b>20,152</b><span>objects propagated, 57 % of the 35,194 on orbit</span></div>
+            <div><b>3.5e-5 km</b><span>max difference vs Vallado's 666 reference vectors</span></div>
+            <div><b>0.694</b><span>naive collision forecast, reproduced exactly</span></div>
+            <div><b>F1 0.81</b><span>manoeuvre classifier, 803 events</span></div>
           </div>
-          Every architectural decision is written down as it was
-          made — including the wrong ones — and the core's own overhead is measured at tens of
-          microseconds per message with a reproducible benchmark.
+          <ul>
+            <li><strong>Negative result, published:</strong> the best collision model scores
+              0.627 on the test set against 0.694 for the naive forecast, but it is
+              <strong>not a validated improvement</strong>. Cross-validation says the opposite
+              (0.98, and 1.23 nested, against 0.80) and it wins only 86 % of bootstrap
+              resamples. The GRU (1.32) and direct regression (2.37) are worse than doing nothing.</li>
+            <li>Manoeuvres: classifier F1 0.81, physics baseline 0.74, CUSUM 0.52. The step in
+              semi-major axis alone reaches 0.79, so the machine learning adds about two points.
+              The same detections at random times score 0.09. Detection is retrospective,
+              about three days.</li>
+            <li>The propagator matches the reference implementation; the positions themselves
+              still carry SGP4's kilometre-level error.</li>
+          </ul>
         </dd>
+        <dt>Limits</dt>
+        <dd>The catalogue covers only objects with public bulk elements (most debris needs a
+          Space-Track account). The detector design was tuned on the same 15 satellites it is
+          scored on. Frame rate was measured with software rendering only, not on a real GPU
+          or phone. 62 Python tests and 7 web tests pass.</dd>
+        <dt>How it was made</dt>
+        <dd>Built with substantial help from an AI coding assistant (Claude Code), which wrote
+          most of the code. A second, independent session reviewed it line by line, re-ran
+          every experiment and corrected what did not hold, including the manoeuvre scores.
+          <strong>Mine:</strong> the question, the rules (public data only, baselines first,
+          negative results published) and the responsibility for every claim.</dd>
       </dl>
       <div class="links">
-        <a class="btn" href="https://github.com/didimacveg/kairos">Repository →</a>
-        <a class="btn alt" href="https://github.com/didimacveg/kairos/tree/main/docs/adr">Decision records</a>
+        <a class="btn" href="assets/raan/RAAN_technical_report.pdf">Technical report (PDF, 6 pages) →</a>
+        <a class="btn alt" href="https://didimacveg.github.io/kessler/">Live site</a>
+        <a class="btn alt" href="https://github.com/didimacveg/kessler">Repository</a>
       </div>
     </article>
 
-    <article class="project" aria-labelledby="p-tg">
-      <div class="p-head"><h3 id="p-tg">TraceGuard</h3><span class="status">Founder · deployed MVP</span></div>
-      <p class="one">Continuous compliance auditing for physical products: every firmware change checked against the product's safety rules, in seconds.</p>
+    <article class="project" aria-labelledby="p-qec">
+      <div class="p-head"><h3 id="p-qec">QEC Lab</h3><span class="status">In progress · no results yet</span></div>
+      <p class="one">An open lab for quantum error correction: neural decoders against
+        minimum-weight perfect matching (MWPM) on the surface code.</p>
       <dl class="psrt">
-        <dt>Problem</dt>
-        <dd>Hardware teams change code at software speed; compliance moves at paper speed.
-          When an engineer raises a safety parameter in firmware — a thermal cut-off, an
-          altitude ceiling — weeks can pass before anyone notices it broke a risk assessment
-          or a regulation.</dd>
-        <dt>Solution</dt>
-        <dd><ul>
-          <li>A push to a connected repository is analysed against a <strong>machine-readable rule set</strong>
-            (EU Cyber Resilience Act, IEC&nbsp;61508, a company's own risk assessment).</li>
-          <li>A breach opens a GitHub or Jira ticket quoting the exact line and the rule; every decision lands in an audit trail.</li>
-          <li><strong>The model never has the last word:</strong> a deterministic layer discards any finding
-            whose rule doesn't exist or whose evidence doesn't appear literally in the diff. Severity comes
-            from the customer's document, not from the model.</li>
-          <li>Hexagonal architecture enforced by a lint rule; idempotent webhooks (atomic
-            <code>INSERT … ON CONFLICT</code>); tenant secrets encrypted with AES-256-GCM.</li>
-        </ul></dd>
-        <dt>Technology</dt>
-        <dd class="tags"><span>TypeScript (strict)</span><span>Next.js</span><span>Hexagonal architecture</span><span>Supabase / Postgres</span><span>GitHub App</span><span>Jira</span><span>Claude API</span></dd>
-        <dt>Result</dt>
-        <dd>
-          <div class="nums">
-            <div><b>100 %</b><span>precision &amp; recall, 30 labelled commits</span></div>
-            <div><b>10 / 10</b><span>unseen holdout commits</span></div>
-            <div><b>&lt; 5 s</b><span>median, push to verdict</span></div>
-            <div><b>50+</b><span>engineers &amp; CTOs contacted</span></div>
-          </div>
-          Validated the problem through 50+ cold conversations with European hardware engineers
-          and CTOs. Writing rules that also state what does <em>not</em> breach them took precision
-          from 57&nbsp;% to 100&nbsp;%. Deployed; no external users yet.
-        </dd>
+        <dt>Question</dt>
+        <dd>A quantum computer only works if errors are decoded faster than they accumulate.
+          MWPM is the standard decoder for the surface code. When, if ever, does a neural
+          decoder beat it, and at what cost?</dd>
+        <dt>Plan</dt>
+        <dd>Same rules as RAAN: reproduce the MWPM baseline first, then train neural decoders
+          and compare them under one protocol, publishing the result whichever way it goes.</dd>
+        <dt>State</dt>
+        <dd>Under construction. There is nothing to show yet, so there are no numbers here.
+          They will appear when anyone can reproduce them. It will be built with an AI coding
+          assistant, with the same split as RAAN.</dd>
       </dl>
       <div class="links">
-        <a class="btn" href="https://traceguard.eu">traceguard.eu →</a>
-      </div>
-    </article>
-
-    <article class="project" aria-labelledby="p-ch">
-      <div class="p-head"><h3 id="p-ch">Chess trainer</h3><span class="status">In development</span></div>
-      <p class="one">A local training app for deliberate chess practice: understanding <em>why</em> a move works, not memorising it.</p>
-      <dl class="psrt">
-        <dt>Problem</dt>
-        <dd>Most training tools tell you the best move but not why, don't know which mistakes
-          <em>you</em> keep making, and generate explanations that sound right without being checked.</dd>
-        <dt>Solution</dt>
-        <dd><ul>
-          <li>Eleven modules: an adaptive diagnostic (Glicko-2 per skill area), analysis of my own games
-            with lichess-style move classification, a thinking routine (threat → candidates → move),
-            calculation without moving pieces, tactics, openings, pawn structures, endgames and play against
-            human-like bots.</li>
-          <li><strong>Every explanation is built from verifiable facts</strong> (Stockfish, endgame tablebase
-            or board rules); a test checks that each sentence cites a fact and that every move, square or
-            number it mentions is in that fact. Optional AI rewording is discarded if it adds anything.</li>
-          <li>Spaced repetition (FSRS) brings mistakes back at the right time; runs locally, no accounts.</li>
-        </ul></dd>
-        <dt>Technology</dt>
-        <dd class="tags"><span>TypeScript</span><span>Next.js</span><span>SQLite + Drizzle</span><span>Stockfish (WASM &amp; native)</span><span>chess.js</span><span>FSRS</span><span>Vitest</span><span>Playwright</span></dd>
-        <dt>Result</dt>
-        <dd>
-          <div class="nums">
-            <div><b>11</b><span>training modules</span></div>
-            <div><b>12</b><span>pawn structures classified</span></div>
-            <div><b>29</b><span>theoretical endgames</span></div>
-            <div><b>100 %</b><span>explanations fact-checked by test</span></div>
-          </div>
-          All modules implemented and tested, with end-to-end tests in a real browser. Next step:
-          using it on my own games and validating the tactic detector against lichess's official themes.
-        </dd>
-      </dl>
-      <div class="links">
-        <span class="btn alt" aria-disabled="true">Repository private while in development</span>
-      </div>
-    </article>
-
-    <article class="project" aria-labelledby="p-gs">
-      <div class="p-head"><h3 id="p-gs">GetSympto</h3><span class="status">Completed</span></div>
-      <p class="one">A web app that turns a symptom description into structured, understandable guidance — orientation, never diagnosis.</p>
-      <dl class="psrt">
-        <dt>Problem</dt>
-        <dd>People describe symptoms in their own words, search across many sites, and end up
-          with either too much information or no idea how urgently to act — often in a language
-          that isn't theirs.</dd>
-        <dt>Solution</dt>
-        <dd><ul>
-          <li>An <strong>interactive SVG body map</strong> plus free-text description; a language
-            model constrained to return a structured report (possible causes, urgency level, next steps).</li>
-          <li>Positioned explicitly as an information tool, not a diagnostic system.</li>
-          <li><strong>Anonymous by default</strong>; accounts only for saving reports and PDFs.
-            Server-side validation, sanitisation and IP rate limiting.</li>
-          <li>Available in Spanish, English, Chinese and Russian.</li>
-        </ul></dd>
-        <dt>Technology</dt>
-        <dd class="tags"><span>Next.js 14</span><span>React</span><span>Supabase (Postgres, Auth)</span><span>Claude API</span><span>Vercel</span><span>Cloudflare</span></dd>
-        <dt>Result</dt>
-        <dd>
-          <div class="nums">
-            <div><b>Done</b><span>production MVP</span></div>
-            <div><b>4</b><span>languages</span></div>
-            <div><b>0</b><span>accounts needed to use it</span></div>
-            <div><b>SVG</b><span>interactive body map</span></div>
-          </div>
-          Completed as a production MVP. Payment providers rejected a health-adjacent
-          product, which taught me that technical feasibility doesn't guarantee business feasibility. I also documented a race condition
-          in the daily usage limit (check-then-increment is not atomic under concurrent serverless
-          requests) and the atomic database operation that fixes it.
-        </dd>
-      </dl>
-      <div class="links">
-        <a class="btn" href="https://github.com/didimacveg/getsympto">Repository →</a>
-        <a class="btn alt" href="https://getsympto.app">getsympto.app</a>
+        <span class="btn alt">Repository private while in development</span>
       </div>
     </article>
 
@@ -359,7 +328,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         <dt>Problem</dt>
         <dd>An orbit simulation always <em>looks</em> plausible. A poor integrator invents
           effects of its own: at a careless time step this code manufactures 67″ per century
-          of spurious perihelion precession — more than the relativistic effect I wanted to
+          of spurious perihelion precession, more than the relativistic effect I wanted to
           measure. Without validation, a pretty animation proves nothing.</dd>
         <dt>Solution</dt>
         <dd><ul>
@@ -369,7 +338,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
           <li>First post-Newtonian correction and solar J2; a black-hole module with an
             ISCO-based capture criterion; adaptive sub-stepping for close encounters.</li>
           <li>A validation suite that tests conservation laws, convergence order and Kepler's
-            third law on <em>simulated</em> orbits, run on GCC and Clang in CI.</li>
+            third law on <em>simulated</em> orbits, run in CI on every push.</li>
         </ul></dd>
         <dt>Technology</dt>
         <dd class="tags"><span>C++17</span><span>CMake</span><span>Numerical methods</span><span>JavaScript (browser build)</span><span>Python / matplotlib</span><span>GitHub Actions</span></dd>
@@ -378,19 +347,134 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
           <div class="nums">
             <div><b>42.81″</b><span>per century, Mercury (GR)</span></div>
             <div><b>0.4 %</b><span>error vs 42.98″ accepted</span></div>
-            <div><b>4.00</b><span>measured order, Yoshida 4</span></div>
-            <div><b>40</b><span>validation tests</span></div>
+            <div><b>1.4e-11</b><span>energy error at 100 yr, Yoshida 4</span></div>
+            <div><b>31</b><span>validation cases</span></div>
           </div>
-          The no-perturbation control returns exactly 0″ of precession; angular momentum is
-          conserved to ~10⁻¹⁴ on the full system; simulated planetary periods match the
-          observed ones (inner planets within 2×10⁻⁵).
+          The no-perturbation control returns exactly 0″ of precession. Explicit Euler
+          drifts to 8 % energy error over the same 100 years. Known limits: the
+          relativistic term is applied only relative to the dominant central body.
         </dd>
+        <dt>How it was made</dt>
+        <dd>Built with an AI coding assistant. <strong>Mine:</strong> the decision to validate
+          against measurement instead of trusting the animation, the choice of what to
+          test, and the review of the results.</dd>
       </dl>
       <div class="links">
         <a class="btn" href="https://github.com/didimacveg/gravity-lab">Repository →</a>
         <a class="btn alt" href="https://didimacveg.github.io/gravity-lab/">Live simulator</a>
       </div>
     </article>
+
+    <article class="project" aria-labelledby="p-k">
+      <div class="p-head"><h3 id="p-k">KAIROS</h3><span class="status">Python · local-first</span></div>
+      <p class="one">A modular, local-first personal AI assistant that talks, remembers, acts on my desktop and proposes changes to its own code.</p>
+      <dl class="psrt">
+        <dt>Problem</dt>
+        <dd>Cloud assistants know nothing about my context and send what they do learn to
+          someone else's servers; local ones run privately but know nothing about me. I wanted
+          one that does both, keeps working without internet, and can never execute something
+          it invented.</dd>
+        <dt>Solution</dt>
+        <dd><ul>
+          <li>A core plus <strong>specialised agents</strong> (voice, memory, reasoning,
+            documents, automation), each a bounded context behind one contract.</li>
+          <li>Hybrid language model: cloud reasoning with <strong>automatic fallback to a local
+            model</strong> when there is no internet.</li>
+          <li>Desktop control through a closed whitelist: the model <em>chooses</em> actions, it never writes commands.</li>
+          <li>Self-improvement pipeline: it writes a patch, tests it in a network-less sandbox,
+            and leaves a proposal; a separate service merges it only after my approval.</li>
+        </ul></dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL + pgvector</span><span>Docker</span><span>Ollama</span><span>Tailscale</span></dd>
+        <dt>Result</dt>
+        <dd>
+          <div class="nums">
+            <div><b>17</b><span>agents</span></div>
+            <div><b>300+</b><span>automated tests</span></div>
+            <div><b>77</b><span>decision records</span></div>
+            <div><b>1</b><span>user: me</span></div>
+          </div>
+          Every architectural decision is written down as it was made, including the wrong
+          ones: five outages that 300 unit tests could not catch, and the ten lines of
+          start-up test that would have caught all of them.
+        </dd>
+        <dt>How it was made</dt>
+        <dd>I used Claude as a pair programmer for the implementation. <strong>Mine:</strong>
+          the architecture and the technical decisions, recorded one by one in the decision
+          records, and using it on my own machine.</dd>
+      </dl>
+      <div class="links">
+        <a class="btn" href="https://github.com/didimacveg/kairos">Repository →</a>
+        <a class="btn alt" href="https://github.com/didimacveg/kairos/tree/main/docs/adr">Decision records</a>
+      </div>
+    </article>
+
+    <article class="project" aria-labelledby="p-ch">
+      <div class="p-head"><h3 id="p-ch">Chess trainer</h3><span class="status">Personal tool · private</span></div>
+      <p class="one">A local training app for deliberate chess practice: understanding <em>why</em> a move works, not memorising it.</p>
+      <dl class="psrt">
+        <dt>Problem</dt>
+        <dd>Most training tools tell you the best move but not why, don't know which mistakes
+          <em>you</em> keep making, and generate explanations that sound right without being checked.</dd>
+        <dt>Solution</dt>
+        <dd><ul>
+          <li>An adaptive diagnostic (Glicko-2 per skill area), analysis of my own games with
+            lichess-style move classification, a thinking routine (threat, candidates, move),
+            calculation without moving pieces, tactics, openings, pawn structures, endgames
+            and play against Stockfish or Maia, a network trained to play like humans of a given rating.</li>
+          <li><strong>Every explanation is built from verifiable facts</strong> (Stockfish, endgame tablebase
+            or board rules); a test checks that each sentence cites a fact and that every move, square or
+            number it mentions is in that fact.</li>
+          <li>Spaced repetition (FSRS) brings mistakes back at the right time; runs locally, no accounts.</li>
+        </ul></dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>TypeScript</span><span>Next.js</span><span>SQLite + Drizzle</span><span>Stockfish</span><span>Maia</span><span>chess.js</span><span>FSRS</span><span>Vitest</span><span>Playwright</span></dd>
+        <dt>Result</dt>
+        <dd>
+          <div class="nums">
+            <div><b>143</b><span>unit tests</span></div>
+            <div><b>5</b><span>end-to-end tests in a real browser</span></div>
+            <div><b>12</b><span>pawn structures classified</span></div>
+            <div><b>29</b><span>theoretical endgames</span></div>
+          </div>
+          All modules implemented and tested. Not yet verified against the live lichess and
+          chess.com services, and the twelve structure sheets still need my review.
+        </dd>
+        <dt>How it was made</dt>
+        <dd>Written by an AI coding assistant to my specification, with an independent review
+          pass. <strong>Mine:</strong> what to train and how, the rule that no explanation may
+          go unchecked, and using it on my own games.</dd>
+      </dl>
+      <div class="links">
+        <span class="btn alt">Repository private (personal use)</span>
+      </div>
+    </article>
+
+    <h3 class="sub">More work</h3>
+    <ul class="edu">
+      <li><b>Quant Path</b><span class="when">2026 · private</span>
+        <span class="what">A training programme for quantitative trading: a small web app for daily
+          drills (mental arithmetic, sequences, probability, market making), a bank of 110 problems
+          and nine sets of notes. 101 of the solutions are verified by code; the app is not deployed yet.</span>
+        <span class="what">Produced with an AI coding assistant to my brief. Mine: the goal, the brief and doing the training.</span></li>
+      <li><b>TraceGuard</b><span class="when">2026 · paused MVP</span>
+        <span class="what">Checks each firmware change against a product's safety rules. A language model
+          proposes findings; a deterministic layer discards any whose rule does not exist or whose evidence
+          is not literally in the diff. 100 % precision and recall on my own set of 30 hand-labelled commits
+          and on 10 held-out ones, in a demo repository. No external users.</span>
+        <span class="what">Built with AI assistance. Mine: the product idea, the conversations with hardware engineers that shaped it, and the evaluation design. <a href="https://traceguard.eu">traceguard.eu</a></span></li>
+      <li><b>Sympto+</b><span class="when">2026 · paused</span>
+        <span class="what">A web app that turns a symptom description and a body map into structured guidance in
+          four languages: orientation, never diagnosis. It reached a production MVP and is paused: payment
+          providers rejected a health-adjacent product. The write-up documents an unfixed race condition in the daily
+          usage limit and the atomic database operation that would close it.</span>
+        <span class="what">Claude implemented parts of the code. Mine: the product, the architecture and the body-map design. <a href="https://github.com/didimacveg/getsympto">Repository</a></span></li>
+      <li><b>ARETÉ</b><span class="when">2026 · personal tool · private</span>
+        <span class="what">An offline-first app I use to plan and audit my own study: timed commitments,
+          a per-subject log of exams and repeated mistakes, and a weekly review. The rules live in pure,
+          tested functions; nothing derived is stored.</span>
+        <span class="what">Written by an AI coding assistant. Mine: the rules of the system and using it.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -400,25 +484,55 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <ul class="edu">
       <li><b>Bachillerato in Sciences &amp; Technology</b><span class="when">2025 – 2027</span>
         <span class="what">IES San Agustín del Guadalix, Madrid · Mathematics II, Physics, Technology &amp; Engineering, Computer Science</span></li>
+      <li><b>University applications, September 2027 entry</b><span class="when">in preparation</span>
+        <span class="what">BSc Aerospace Engineering, TU Delft (selection exam) · BSc Applied Physics, TU Eindhoven · BSc Advanced Technology, University of Twente</span></li>
       <li><b>CS50x: Introduction to Computer Science</b><span class="when">2026 · in progress</span>
         <span class="what">Harvard University, online</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="certifications" aria-labelledby="cert-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">04</span><h2 id="cert-h">Certifications</h2></div>
+    <ul class="edu">
       <li><b>Cambridge C1 Advanced</b><span class="when">2025</span>
-        <span class="what">English, CEFR level C1</span></li>
+        <span class="what">English, CEFR level C1 · score 186 · obtained at 16</span></li>
       <li><b>YCT 2</b><span class="when"></span>
         <span class="what">Youth Chinese Test, level 2</span></li>
+      <li><b>Judo, black belt</b><span class="when"></span>
+        <span class="what">Madrid champion at age 12 · no longer competing</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="writing" aria-labelledby="writing-h">
+  <div class="wrap">
+    <div class="sec-head"><span class="n">05</span><h2 id="writing-h">Writing</h2></div>
+    <ul class="edu">
+      <li><b><a href="assets/raan/RAAN_technical_report.pdf">RAAN: technical report</a></b><span class="when">2026 · PDF, 6 pages</span>
+        <span class="what">Data, protocol and results of the three RAAN studies, including the collision model that did not beat the naive forecast and why. Written with substantial AI assistance; I answer for every claim.</span></li>
+      <li><b><a href="https://github.com/didimacveg/gravity-lab#capture-criterion">A capture criterion that captured nothing</a></b><span class="when">2026 · gravity-lab</span>
+        <span class="what">Why asking "is the body inside the capture radius now?" fails twice over, and the pericentre test that replaces it.</span></li>
+      <li><b><a href="https://github.com/didimacveg/kairos/tree/main/docs/adr">KAIROS decision records</a></b><span class="when">2026 · in Spanish</span>
+        <span class="what">77 short records of architectural decisions written as they were made, among them a web search that failed for months by returning success.</span></li>
+      <li><b><a href="https://github.com/didimacveg/getsympto#problems-encountered">A race condition in a usage limit</a></b><span class="when">2026 · Sympto+</span>
+        <span class="what">Check-then-increment is not atomic under concurrent serverless requests. The fix, one atomic database operation, is designed but not yet applied.</span></li>
     </ul>
   </div>
 </section>
 
 <section id="contact" class="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div class="sec-head"><span class="n">04</span><h2 id="contact-h">Contact</h2></div>
+    <div class="sec-head"><span class="n">06</span><h2 id="contact-h">Contact</h2></div>
     <p>Admissions teams, engineers and anyone curious about the projects above: I'm happy to
       walk through any decision in them.</p>
     <a class="email" href="mailto:dmaciasveg@gmail.com">dmaciasveg@gmail.com</a>
     <div class="channels">
       <a class="btn alt" href="https://github.com/didimacveg">GitHub</a>
       <a class="btn alt" href="https://www.linkedin.com/in/diegomac%C3%ADasvega/">LinkedIn</a>
+      <a class="btn alt" href="cv/Diego_Macias_Vega_CV_EN.pdf">CV · English</a>
+      <a class="btn alt" href="cv/Diego_Macias_Vega_CV_ES.pdf">CV · Español</a>
     </div>
   </div>
 </section>
@@ -430,5 +544,102 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <span>Static HTML, no tracking, no frameworks · Updated November 2026</span>
   </div>
 </footer>
+
+<script>
+/* Hydrogen orbital probability cloud.
+   Each particle is one sample of |psi_nlm(r, theta, phi)|^2 r^2 sin(theta), drawn by rejection
+   sampling from the exact hydrogen wavefunctions (associated Laguerre x associated Legendre),
+   in units of the Bohr radius. Real orbitals: the azimuthal factor is cos(m phi). */
+(function () {
+  var cv = document.getElementById('psi');
+  if (!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d');
+  var label = document.getElementById('psi-state');
+  var STATES = [[2, 1, 0], [3, 2, 0], [3, 1, 1], [4, 2, 1], [3, 2, 2], [4, 3, 0]];
+  var LETTER = 'spdf';
+  var SUB = '₀₁₂₃₄';
+  var small = Math.min(window.innerWidth, window.innerHeight) < 700;
+  var N = small ? 1700 : 2800;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function laguerre(k, a, x) {
+    if (k === 0) return 1;
+    var p = 1, c = 1 + a - x;
+    for (var i = 1; i < k; i++) { var n = ((2 * i + 1 + a - x) * c - (i + a) * p) / (i + 1); p = c; c = n; }
+    return c;
+  }
+  function legendre(l, m, x) {
+    var pmm = 1, s = Math.sqrt(1 - x * x), f = 1, i;
+    for (i = 1; i <= m; i++) { pmm *= -f * s; f += 2; }
+    if (l === m) return pmm;
+    var p1 = x * (2 * m + 1) * pmm;
+    for (i = m + 2; i <= l; i++) { var n = ((2 * i - 1) * x * p1 - (i + m - 1) * pmm) / (i - m); pmm = p1; p1 = n; }
+    return p1;
+  }
+  function sampler(n, l, m) {
+    var radial = function (r) { var q = 2 * r / n, R = Math.exp(-q / 2) * Math.pow(q, l) * laguerre(n - l - 1, 2 * l + 1, q); return r * r * R * R; };
+    var polar = function (t) { var P = legendre(l, m, Math.cos(t)); return Math.sin(t) * P * P; };
+    var rMax = 4 * n * n + 10, fr = 0, ft = 0, i, v;
+    for (i = 1; i <= 600; i++) { v = radial(rMax * i / 600); if (v > fr) fr = v; }
+    var edge = rMax;                                   /* radius beyond which the density is negligible */
+    for (i = 600; i > 0; i--) { if (radial(rMax * i / 600) > 0.06 * fr) { edge = rMax * i / 600; break; } }
+    for (i = 1; i < 400; i++) { v = polar(Math.PI * i / 400); if (v > ft) ft = v; }
+    return function (out, k) {
+      var r, t, p, c;
+      do { r = Math.random() * rMax; } while (Math.random() * fr > radial(r));
+      do { t = Math.random() * Math.PI; } while (Math.random() * ft > polar(t));
+      do { p = Math.random() * 2 * Math.PI; c = Math.cos(m * p); } while (m > 0 && Math.random() > c * c);
+      var s = Math.sin(t) * r / edge;
+      out[k] = s * Math.cos(p); out[k + 1] = Math.cos(t) * r / edge; out[k + 2] = s * Math.sin(p);
+    };
+  }
+
+  var cur = new Float32Array(3 * N), tgt = new Float32Array(3 * N), ease = new Float32Array(N);
+  var idx = 0, size = 0, dpr = 1, yaw = 0, last = 0, since = 0, visible = true, raf = 0;
+
+  function load(first) {
+    var s = STATES[idx], draw = sampler(s[0], s[1], s[2]);
+    for (var i = 0; i < N; i++) {
+      draw(tgt, 3 * i);
+      ease[i] = 0.02 + Math.random() * 0.05;
+      if (first) { cur[3 * i] = tgt[3 * i]; cur[3 * i + 1] = tgt[3 * i + 1]; cur[3 * i + 2] = tgt[3 * i + 2]; }
+    }
+    if (label) label.textContent = 'hydrogen · |ψ' + SUB[s[0]] + SUB[s[1]] + SUB[s[2]] + '|² · ' + s[0] + LETTER[s[1]];
+  }
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    size = cv.clientWidth;
+    cv.width = cv.height = Math.round(size * dpr);
+  }
+  function frame(now) {
+    raf = 0;
+    var dt = Math.min(now - last, 50); last = now;
+    if (!still) { yaw += dt * 0.00022; since += dt; if (since > 9000) { since = 0; idx = (idx + 1) % STATES.length; load(false); } }
+    var w = cv.width, h = w / 2, scale = w * 0.46, cy = Math.cos(yaw), sy = Math.sin(yaw), ct = 0.94, st = 0.34;
+    var d = Math.max(1, 1.5 * dpr);
+    ctx.clearRect(0, 0, w, w);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.fillStyle = '#3D8BFF';
+    for (var i = 0; i < N; i++) {
+      var k = 3 * i, e = ease[i];
+      var x = cur[k] += (tgt[k] - cur[k]) * e, y = cur[k + 1] += (tgt[k + 1] - cur[k + 1]) * e, z = cur[k + 2] += (tgt[k + 2] - cur[k + 2]) * e;
+      var xr = x * cy + z * sy, zr = z * cy - x * sy;      /* slow rotation about the vertical axis */
+      var yr = y * ct - zr * st, zz = y * st + zr * ct;    /* fixed tilt towards the viewer */
+      ctx.globalAlpha = 0.5 + 0.3 * Math.max(-1, Math.min(1, zz));
+      ctx.fillRect(h + xr * scale, h - yr * scale, d, d);
+    }
+    ctx.globalAlpha = 1;
+    if (!still && visible) raf = requestAnimationFrame(frame);
+  }
+  function kick() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+
+  resize(); load(true); kick();
+  window.addEventListener('resize', function () { var s = cv.clientWidth; if (s !== size) { resize(); kick(); } });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting && !document.hidden; if (visible) kick(); }).observe(cv);
+  }
+  document.addEventListener('visibilitychange', function () { visible = !document.hidden; if (visible) kick(); });
+})();
+</script>
 </body>
 </html>
