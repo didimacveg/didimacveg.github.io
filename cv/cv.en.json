@@ -13,7 +13,7 @@
     {
       "title": "Profile",
       "lines": [
-        "I build software on physics and mathematics and check it against measurement: reproduced baselines, validation suites and published negative results. I work with AI coding assistants and say so: the code is largely AI-written; the questions, the rules each project obeys, the decisions and the responsibility for every claim are mine."
+        "I direct software projects built on physics and mathematics, written with AI coding assistants, and check them against measurement: reproduced baselines, validation suites and published negative results."
       ]
     },
     {
@@ -72,7 +72,7 @@
           "head": "KAIROS",
           "org": "Python, FastAPI, PostgreSQL + pgvector, Docker",
           "right": "2026",
-          "bullets": ["Local-first personal AI assistant: 17 agents, 300+ tests, sandboxed self-modification that never merges without my approval. Architecture and decisions mine (77 written decision records); Claude as pair programmer."]
+          "bullets": ["Local-first personal AI assistant: 17 agents, 300+ tests, sandboxed self-modification that never merges without my approval. Architecture and decisions mine (77 decision records); code by Claude."]
         },
         {
           "head": "Other",
@@ -96,10 +96,11 @@
     {
       "title": "Skills, languages and other",
       "lines": [
-        "<b>Technical:</b> Python, C++17, TypeScript; numerical integration, orbital propagation (SGP4), gradient boosting and recurrent networks, evaluation design (baselines, cross-validation, bootstrap); Git, Linux/WSL, Docker, GitHub Actions.",
+        "<b>How I build:</b> I design, direct, review and test projects built with AI coding assistants (Claude Code). I define the problem, the evaluation and the acceptance criteria, check results against references and decide what ships. I cannot yet write these codebases from scratch; I am learning programming fundamentals (Python, algorithms) alongside.",
+        "<b>Working knowledge:</b> Python (beginner, learning), Git and GitHub, Linux/WSL, reading and testing code. Used in my AI-assisted projects, not written by me: C++17, TypeScript, FastAPI, PostgreSQL, Docker.",
+        "<b>Concepts I can explain:</b> orbital propagation (SGP4), baselines, cross-validation and bootstrap intervals, gradient boosting at a conceptual level, the surface code and minimum-weight perfect matching.",
         "<b>Languages:</b> Spanish (native) · English, Cambridge C1 Advanced (score 186, obtained at 16) · Chinese, YCT 2.",
-        "<b>Interests:</b> superintelligence and robotics · physics, quantum above all · machine learning and AI · mathematics.",
-        "<b>Sport:</b> Judo, black belt."
+        "<b>Interests:</b> superintelligence and robotics · physics, quantum above all · machine learning and AI · mathematics. <b>Sport:</b> judo, black belt."
       ]
     }
   ]

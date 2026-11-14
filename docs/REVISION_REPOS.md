@@ -61,7 +61,7 @@ que lo publiques**.
 2. Después, descripción, web y temas:
 
 ```bash
-gh repo edit didimacveg/kessler --description "RAAN: open, reproducible lab on public orbital data. Digital twin, collision-risk study on ESA's dataset, manoeuvre detection. Research project, not for operational use." --homepage "https://didimacveg.github.io/kessler/" --add-topic space-debris --add-topic orbital-mechanics --add-topic sgp4 --add-topic space-situational-awareness --add-topic machine-learning --add-topic reproducible-research --add-topic threejs
+gh repo edit didimacveg/raan --description "RAAN: open, reproducible lab on public orbital data. Digital twin, collision-risk study on ESA's dataset, manoeuvre detection. Research project, not for operational use." --homepage "https://didimacveg.github.io/raan/" --add-topic space-debris --add-topic orbital-mechanics --add-topic sgp4 --add-topic space-situational-awareness --add-topic machine-learning --add-topic reproducible-research --add-topic threejs
 ```
 
 3. El nombre del repositorio (`kessler`) coincide con una librería de la ESA sobre el mismo

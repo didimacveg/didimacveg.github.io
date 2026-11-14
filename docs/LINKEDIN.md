@@ -41,7 +41,7 @@ What I have built so far:
 • KAIROS, a local-first AI assistant with 17 agents and every design decision written down.
 • In progress: Syndrome Lab, neural decoders vs minimum-weight perfect matching on the surface code. Results and report to be published late November 2026.
 
-How I work: I use AI coding assistants heavily and I say so. Much of the code in these projects was written by an AI. What is mine is the question, the rules each project must obey (public data only, baselines first, negative results published), the decisions and the responsibility for every claim.
+How I build: I design, direct, review and test projects built with AI coding assistants (Claude Code). I define the problem, the evaluation and the acceptance criteria, check results against references and decide what ships. The code in these projects was written by the assistant: I cannot yet write these codebases from scratch, and I am learning programming fundamentals (Python, algorithms) alongside. What is mine is the question, the rules each project must obey (public data only, baselines first, negative results published), the decisions and the responsibility for every claim.
 
 Interests: superintelligence and robotics, physics (quantum above all), machine learning and AI, and mathematics.
 
@@ -64,7 +64,7 @@ Lo que he construido hasta ahora:
 • KAIROS, un asistente de IA que funciona en local, con 17 agentes y cada decisión de diseño por escrito.
 • En curso: Syndrome Lab, decodificadores neuronales frente al emparejamiento perfecto de peso mínimo en el código de superficie. Los resultados y el informe se publicarán a finales de noviembre de 2026.
 
-Cómo trabajo: uso mucho los asistentes de programación de IA y lo digo. Gran parte del código de estos proyectos lo ha escrito una IA. Lo mío es la pregunta, las reglas que cada proyecto debe cumplir (solo datos públicos, líneas base primero, resultados negativos publicados), las decisiones y la responsabilidad de cada afirmación.
+Cómo trabajo: diseño, dirijo, reviso y pruebo proyectos hechos con asistentes de programación de IA (Claude Code). Defino el problema, cómo se evalúa y los criterios de aceptación, compruebo los resultados con referencias y decido qué se publica. El código de estos proyectos lo ha escrito el asistente: todavía no sé escribir programas así desde cero y, a la vez, estoy aprendiendo los fundamentos de la programación (Python, algoritmos). Lo mío es la pregunta, las reglas que cada proyecto debe cumplir (solo datos públicos, líneas base primero, resultados negativos publicados), las decisiones y la responsabilidad de cada afirmación.
 
 Intereses: superinteligencia y robótica, física (sobre todo cuántica), machine learning e IA, y matemáticas.
 
@@ -83,7 +83,7 @@ RAAN, ábrelas en una ventana privada del navegador (ver `PASOS_PARA_DIEGO.md`, 
 ### 3.1 RAAN · Open Orbital Intelligence Lab
 
 - Fechas: nov. 2026 – actualidad
-- URL: `https://didimacveg.github.io/kessler/`
+- URL: `https://didimacveg.github.io/raan/`
 
 ```
 An open, reproducible lab on public orbital data. Research project, not for operational use.

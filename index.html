@@ -188,12 +188,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
           University of Twente. What draws me is the place where a model meets reality:
           orbits, atoms, error rates, learning machines. There, "it looks right" is not
           an answer. A number has to agree with a measurement.</p>
-        <p>Most of what I know about software I taught myself by building complete systems.
-          I use AI heavily as a development tool and I say so openly: much of the code on
-          this page was written by an AI coding assistant. What is mine is the question,
-          the rules each project has to obey, the decisions about what to build and what
-          to cut, and the responsibility for every claim. Each project below states its
-          own split.</p>
+        <p><strong>How I build:</strong> I design, direct, review and test projects built
+          with AI coding assistants (Claude Code). I define the problem, the evaluation and
+          the acceptance criteria, check results against references and decide what ships.
+          The code on this page was written by the assistant, not by me: I cannot yet write
+          these codebases from scratch, and I am learning programming fundamentals (Python,
+          algorithms) alongside. Each project below states its own split.</p>
         <p>Outside engineering: <strong>black belt in judo</strong>. I also tutor school
           students privately.</p>
       </div>
@@ -201,6 +201,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         <dt>Interests</dt><dd>Superintelligence and robotics, physics (quantum physics above all), machine learning and AI, and mathematics</dd>
         <dt>Currently</dt><dd>Final year of Bachillerato · preparing the TU Delft selection test</dd>
         <dt>Building</dt><dd>RAAN, an open orbital-data lab, and Syndrome Lab, on quantum error correction</dd>
+        <dt>Working knowledge</dt><dd>Python (beginner, learning), Git and GitHub, Linux/WSL, reading and testing code</dd>
+        <dt>Concepts I can explain</dt><dd>Orbital propagation (SGP4), baselines, cross-validation and bootstrap intervals, gradient boosting at a conceptual level, the surface code and minimum-weight perfect matching</dd>
+        <dt>Used in AI-assisted projects</dt><dd>C++17, TypeScript, FastAPI, PostgreSQL, Docker, GitHub Actions: written by the assistant, not something I write myself</dd>
       </dl>
     </div>
   </div>
@@ -294,8 +297,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       </dl>
       <div class="links">
         <a class="btn" href="assets/raan/RAAN_technical_report.pdf">Technical report (PDF, 6 pages) →</a>
-        <a class="btn alt" href="https://didimacveg.github.io/kessler/">Live site</a>
-        <a class="btn alt" href="https://github.com/didimacveg/kessler">Repository</a>
+        <a class="btn alt" href="https://didimacveg.github.io/raan/">Live site</a>
+        <a class="btn alt" href="https://github.com/didimacveg/raan">Repository</a>
       </div>
     </article>
 
@@ -325,6 +328,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <article class="project" aria-labelledby="p-gl">
       <div class="p-head"><h3 id="p-gl">gravity-lab</h3><span class="status">C++17 · validated</span></div>
       <p class="one">An N-body simulator of the Solar System, checked against astronomical measurement rather than eyeballed.</p>
+      <figure class="shot">
+        <a href="assets/gravity-lab/simulator.webp"><img src="assets/gravity-lab/simulator.webp" width="1200" height="750" loading="lazy" alt="gravity-lab browser simulator: the Solar System seen from above with planet and dwarf-planet orbits, a control panel to choose the integrator (Yoshida 4 selected) and the time step, and counters for elapsed time and energy drift"></a>
+        <figcaption>Browser build of the simulator, Yoshida 4 integrator, after about 20 simulated years. Captured from the repository's web version on 14 November 2026.</figcaption>
+      </figure>
+      <p class="note" style="margin-top:.6rem">The simulator is being improved; this screenshot will be replaced when that work is finished.</p>
       <dl class="psrt">
         <dt>Problem</dt>
         <dd>An orbit simulation always <em>looks</em> plausible. A poor integrator invents
@@ -413,6 +421,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <article class="project" aria-labelledby="p-ch">
       <div class="p-head"><h3 id="p-ch">Chess trainer</h3><span class="status">Personal tool · private</span></div>
       <p class="one">A local training app for deliberate chess practice: understanding <em>why</em> a move works, not memorising it.</p>
+      <div class="shots">
+        <figure class="shot">
+          <a href="assets/chess/home.webp"><img src="assets/chess/home.webp" width="1200" height="750" loading="lazy" alt="Chess trainer home screen in Spanish: today's 30-minute plan in three blocks (mistakes from my games, opening repertoire, tactics), a streak counter, an estimated rating of 1714 and the number of reviews due"></a>
+          <figcaption>Home: the daily plan, built from my own mistakes and reviews due.</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/chess/exercise.webp"><img src="assets/chess/exercise.webp" width="1200" height="750" loading="lazy" alt="Chess trainer tactics exercise: a board with the position on the left and, on the right, the first step of the thinking routine asking what the opponent wants, with four candidate answers"></a>
+          <figcaption>Tactics exercise: before solving, the routine asks what the opponent threatens.</figcaption>
+        </figure>
+      </div>
+      <p class="note">Screenshots of the app (interface in Spanish), from its repository. Nothing is edited.</p>
       <dl class="psrt">
         <dt>Problem</dt>
         <dd>Most training tools tell you the best move but not why, don't know which mistakes
