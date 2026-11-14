@@ -2,76 +2,89 @@
 
 Lo que depende de ti, en orden. Comandos para terminal **Ubuntu/WSL**: copia cada bloque tal cual.
 
-Revisión del 13 de noviembre de 2026. El trabajo está en la rama `claude/upbeat-davinci-m61j9h`,
-con un pull request abierto contra `main`. **La web pública no cambia hasta que lo fusiones**
-(paso 3).
+Revisión del 14 de noviembre de 2026. El trabajo está en la rama
+`claude/cv-honesty-web-updates-9wfh27`, con un pull request abierto contra `main`. **La web
+pública no cambia hasta que lo fusiones** (paso 3).
+
+> **Importante: este pull request se fusiona DESPUÉS de renombrar el repositorio `kessler` a
+> `raan`** (paso 2). La web ya enlaza a `https://didimacveg.github.io/raan/` y a
+> `https://github.com/didimacveg/raan`; si lo fusionas antes, esos dos botones de la ficha de
+> RAAN darán 404 hasta que hagas el renombrado.
+
+Qué cambia en esta revisión:
+
+- **Competencias, en la web y en los dos CV:** ahora dicen la verdad sobre cómo trabajas.
+  «How I build»: diseñas, diriges, revisas y pruebas proyectos hechos con Claude Code; todavía
+  no sabes escribir estos programas desde cero y aprendes Python y algoritmos a la vez. Python
+  figura como «beginner, learning». C++17, TypeScript, FastAPI, PostgreSQL y Docker pasan a
+  «Used in AI-assisted projects». «Concepts I can explain» incluye solo lo que explican los
+  `DEFENSA.md` de `raan` y `syndrome-lab` (los únicos dos que existen). La integración numérica
+  **se ha quitado**: ningún `DEFENSA.md` la explica. Si escribes uno para `gravity-lab`, se puede
+  volver a poner.
+- **Capturas:** gravity-lab (simulador web, versión actual) y el entrenador de ajedrez (inicio y
+  un ejercicio de táctica, de `docs/screenshots/despues/`). KAIROS no tiene capturas en su
+  repositorio y Sympto+ no lleva imagen.
+- **RAAN:** enlaces a `raan` en lugar de `kessler` (web, `docs/LINKEDIN.md`, `docs/REVISION_REPOS.md`).
+- **LinkedIn:** el párrafo «How I work» / «Cómo trabajo» de `docs/LINKEDIN.md`, con el mismo
+  texto honesto. Cópialo a tu perfil.
 
 ---
 
 ## 1. Lee lo que ha cambiado (10 minutos)
 
 ```bash
-cd ~/didimacveg.github.io && git fetch origin && git checkout claude/upbeat-davinci-m61j9h && git pull
+cd ~/didimacveg.github.io && git fetch origin && git checkout claude/cv-honesty-web-updates-9wfh27 && git pull
 ```
 
 ```bash
 make serve
 ```
 
-Abre <http://localhost:8000>. (Si no tienes el repositorio clonado:
-`cd ~ && git clone https://github.com/didimacveg/didimacveg.github.io.git` y repite.)
+Abre <http://localhost:8000>. Comprueba sobre todo el apartado About (párrafo «How I build» y
+la columna de la derecha) y los dos CV: `cv/Diego_Macias_Vega_CV_EN.pdf` y
+`cv/Diego_Macias_Vega_CV_ES.pdf`. Lee cada frase y confirma que es verdad tal cual: en una
+entrevista te pueden pedir que expliques cualquiera de los «Concepts I can explain».
 
-Comprueba lo que **yo no puedo verificar**:
-
-- [ ] Solicitudes: Computer Science and Engineering (TU Delft, selection test), Applied Physics
-      (TU Eindhoven), Advanced Technology (University of Twente).
-- [ ] «Preparing the TU Delft selection test» (apartado About, «Currently»).
-- [ ] Syndrome Lab: «Results and report to be published late November 2026». Si la fecha se
-      mueve, cámbiala en `index.html`, en los dos `cv/*.json` y en `docs/LINKEDIN.md`.
-- [ ] CS50x: «Started 2026».
-- [ ] Los dos CV: `cv/Diego_Macias_Vega_CV_EN.pdf` y `cv/Diego_Macias_Vega_CV_ES.pdf`.
-- [ ] Lo de siempre: C1 (2025, 186, a los 16), instituto, «EU citizen», clases particulares y
-      los apartados «How it was made».
-
-## 2. RAAN: el repositorio sigue sin ser público (5 minutos)
-
-Hoy, 13 de noviembre, `https://github.com/didimacveg/kessler` **da error 404 a quien no ha
-iniciado sesión**, y GitHub lo lista como privado. El botón «Repository» de la ficha de RAAN
-lleva ahí. El despliegue de la web de RAAN sí terminó bien (a las 12:16 UTC), pero desde mi
-entorno no puedo abrir `https://didimacveg.github.io/kessler/`.
-
-Compruébalo en una ventana privada del navegador (Ctrl+Mayús+N):
-
-- <https://github.com/didimacveg/kessler>
-- <https://didimacveg.github.io/kessler/>
-
-Si el primero da 404, hazlo público:
+## 2. Renombra `kessler` a `raan` (5 minutos, ANTES del paso 3)
 
 ```bash
-gh repo edit didimacveg/kessler --visibility public --accept-visibility-change-consequences
+gh repo rename raan --repo didimacveg/kessler --yes
 ```
 
-O en la web: <https://github.com/didimacveg/kessler/settings> → abajo del todo, **Change
-visibility** → **Make public**.
+O en la web: <https://github.com/didimacveg/kessler/settings> → **Repository name** → `raan`
+→ **Rename**.
 
-Si aún no quieres publicarlo, quita los dos botones antes de fusionar:
+GitHub redirige el repositorio antiguo al nuevo, pero **GitHub Pages no**: la web de RAAN pasa
+a `https://didimacveg.github.io/raan/` y la dirección `/kessler/` deja de funcionar. La
+compilación usa rutas relativas (`base: './'` en `web/vite.config.ts`), así que no hay que
+tocar nada para que funcione en la ruta nueva; si Pages no se vuelve a desplegar solo, lanza
+el flujo de despliegue a mano desde la pestaña **Actions** del repositorio.
+
+Si el repositorio sigue privado y ya quieres publicarlo:
 
 ```bash
-cd ~/didimacveg.github.io && sed -i '/kessler\/">Live site<\/a>/d; /github.com\/didimacveg\/kessler">Repository<\/a>/d' index.html && git commit -am "Hide RAAN links until the repository is public" && git push
+gh repo edit didimacveg/raan --visibility public --accept-visibility-change-consequences
 ```
 
-## 3. Fusiona el pull request (2 minutos)
-
-El comando exacto, desde Ubuntu/WSL:
+Actualiza tu copia local para que apunte al nombre nuevo:
 
 ```bash
-cd ~/didimacveg.github.io && git fetch origin && git checkout main && git pull origin main && git merge --no-ff origin/claude/upbeat-davinci-m61j9h -m "Merge content review: applications, Syndrome Lab, CV and LinkedIn" && git push origin main
+mv ~/kessler ~/raan && cd ~/raan && git remote set-url origin https://github.com/didimacveg/raan.git
 ```
 
-Con `gh`, si lo tienes instalado, es equivalente:
+Dentro de `raan` quedan referencias a `kessler` (`web/src/brand.ts`, `raan/brand.py`, el
+`README.md`, los informes y el PDF técnico, que enlaza a `github.com/didimacveg/kessler`). Esa
+dirección redirige, pero conviene cambiarlas en ese repositorio y regenerar el informe (paso 8).
+
+Comprueba en una ventana privada (Ctrl+Mayús+N):
+
+- <https://github.com/didimacveg/raan>
+- <https://didimacveg.github.io/raan/>
+
+## 3. Fusiona el pull request (2 minutos, DESPUÉS del paso 2)
 
 ```bash
-gh pr merge claude/upbeat-davinci-m61j9h --repo didimacveg/didimacveg.github.io --merge
+cd ~/didimacveg.github.io && git fetch origin && git checkout main && git pull origin main && git merge --no-ff origin/claude/cv-honesty-web-updates-9wfh27 -m "Merge honest skills, RAAN rename and project screenshots" && git push origin main
 ```
 
 O en el navegador: <https://github.com/didimacveg/didimacveg.github.io/pulls> → el pull
@@ -84,7 +97,7 @@ recarga con Ctrl+F5.
 
 Con la web ya publicada, pulsa cada uno:
 
-- [ ] RAAN: «Live site» y «Repository» (paso 2).
+- [ ] RAAN: «Live site» y «Repository» (llevan a `raan`; paso 2).
 - [ ] gravity-lab: «Live simulator» (<https://didimacveg.github.io/gravity-lab/>).
 - [ ] <https://traceguard.eu>
 - [ ] LinkedIn (botón de Contact y enlace del CV).
@@ -147,7 +160,7 @@ Lista completa con comandos en `docs/REVISION_REPOS.md`. Lo más urgente:
 - **RAAN regenera su informe:** copia el PDF nuevo y sube el cambio.
 
 ```bash
-cp ~/kessler/reports/RAAN_technical_report.pdf ~/didimacveg.github.io/assets/raan/
+cp ~/raan/reports/RAAN_technical_report.pdf ~/didimacveg.github.io/assets/raan/
 ```
 
 ```bash
@@ -156,6 +169,9 @@ cd ~/didimacveg.github.io && git add assets && git commit -m "Update RAAN report
 
   Si cambian las cifras de RAAN, cámbialas también en `index.html`, en los dos `cv/*.json` y en
   `docs/LINKEDIN.md` (busca `0.694`, `0.81` y `20,152`).
+- **gravity-lab termina su mejora:** sustituye `assets/gravity-lab/simulator.webp` por una
+  captura nueva (WebP, 1200 px de ancho como mucho) y quita la nota «The simulator is being
+  improved…» de su ficha en `index.html`.
 - **Syndrome Lab publica resultados (finales de noviembre):** sustituye su ficha en `index.html`
   (busca `id="p-syn"`), su entrada en los dos `cv/*.json` y el apartado 3.2 de `docs/LINKEDIN.md`.
   Pídemelo en una sesión nueva con el repositorio `syndrome-lab` y lo redacto a partir de sus datos.

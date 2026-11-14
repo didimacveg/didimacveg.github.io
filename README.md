@@ -8,6 +8,7 @@ Static HTML, no build step, no tracking, no frameworks.
 |---|---|
 | `index.html` | The whole site (styles and the hero animation are inline) |
 | `assets/raan/` | RAAN screenshots and a copy of its technical report |
+| `assets/gravity-lab/`, `assets/chess/` | Project screenshots (WebP, at most 1200 px wide) |
 | `cv/` | One-page CV: sources (`cv.en.json`, `cv.es.json`), build script and the two PDFs |
 | `docs/` | Working notes in Spanish: decisions, steps for Diego, LinkedIn texts, review of public repositories; `docs/review/` holds screenshots from the last review |
 

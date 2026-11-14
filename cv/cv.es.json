@@ -13,7 +13,7 @@
     {
       "title": "Perfil",
       "lines": [
-        "Construyo software basado en física y matemáticas y lo contrasto con medidas: líneas base reproducidas, pruebas de validación y resultados negativos publicados. Trabajo con asistentes de programación de IA y lo digo: gran parte del código lo escribe la IA; las preguntas, las reglas de cada proyecto, las decisiones y la responsabilidad de cada afirmación son mías."
+        "Dirijo proyectos de software basados en física y matemáticas, escritos con asistentes de programación de IA, y los contrasto con medidas: líneas base reproducidas, pruebas de validación y resultados negativos publicados."
       ]
     },
     {
@@ -50,7 +50,7 @@
             "Laboratorio reproducible con datos orbitales públicos. Gemelo digital de 20.152 objetos catalogados propagados con SGP4; propagador comprobado con los 666 vectores de referencia de Vallado (diferencia máxima 3,5e-5 km).",
             "Collision Avoidance Challenge de la ESA: predicción ingenua reproducida exactamente (L = 0,694). El mejor modelo obtiene 0,627 en el conjunto de test, pero no supera la validación cruzada; lo publico como resultado negativo.",
             "Detección de maniobras en 15 satélites, dejando un satélite fuera en cada prueba: F1 0,81 (clasificador), 0,74 (línea base física), 0,09 (azar). Informe técnico de 6 páginas.",
-            "Código escrito en su mayor parte por un asistente de IA y revisado por una sesión independiente; yo fijé la pregunta y las reglas y respondo de cada afirmación."
+            "Código escrito sobre todo por IA y revisado por otra sesión; la pregunta, las reglas y cada afirmación son mías."
           ]
         },
         {
@@ -72,7 +72,7 @@
           "head": "KAIROS",
           "org": "Python, FastAPI, PostgreSQL + pgvector, Docker",
           "right": "2026",
-          "bullets": ["Asistente personal de IA que funciona en local: 17 agentes y más de 300 tests. Puede proponer cambios a su propio código en un entorno aislado; nada se fusiona sin mi aprobación. La arquitectura y las decisiones son mías (77 registros de decisión); Claude, como programador de apoyo."]
+          "bullets": ["Asistente personal de IA en local: 17 agentes, más de 300 tests; propone cambios a su propio código en un entorno aislado y nada se fusiona sin mi aprobación. Arquitectura y decisiones mías (77 registros de decisión)."]
         },
         {
           "head": "Otros",
@@ -96,7 +96,9 @@
     {
       "title": "Competencias, idiomas y otros",
       "lines": [
-        "<b>Técnicas:</b> Python, C++17, TypeScript; integración numérica, propagación orbital (SGP4), gradient boosting y redes recurrentes, evaluación (líneas base, validación cruzada, bootstrap); Git, Linux/WSL, Docker, GitHub Actions.",
+        "<b>Cómo trabajo:</b> diseño, dirijo, reviso y pruebo proyectos hechos con asistentes de programación de IA (Claude Code). Defino el problema, cómo se evalúa y los criterios de aceptación, compruebo los resultados con referencias y decido qué se publica. Aún no sé escribir estos programas desde cero; a la vez, aprendo Python y algoritmos.",
+        "<b>Conocimientos prácticos:</b> Python (nivel inicial, aprendiendo), Git y GitHub, Linux/WSL, leer y probar código. Usados en mis proyectos asistidos por IA, sin escribirlos yo: C++17, TypeScript, FastAPI, PostgreSQL, Docker.",
+        "<b>Conceptos que sé explicar:</b> propagación orbital (SGP4), líneas base, validación cruzada e intervalos bootstrap, gradient boosting a nivel conceptual, el código de superficie y el emparejamiento perfecto de peso mínimo.",
         "<b>Idiomas:</b> español (nativo) · inglés, Cambridge C1 Advanced (186 puntos, obtenido a los 16 años) · chino, YCT 2.",
         "<b>Intereses:</b> superinteligencia y robótica · física, sobre todo cuántica · machine learning e IA · matemáticas.",
         "<b>Deporte:</b> judo, cinturón negro."
