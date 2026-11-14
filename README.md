@@ -9,14 +9,14 @@ Static HTML, no build step, no tracking, no frameworks.
 | `index.html` | The whole site (styles and the hero animation are inline) |
 | `assets/raan/` | RAAN screenshots and a copy of its technical report |
 | `cv/` | One-page CV: sources (`cv.en.json`, `cv.es.json`), build script and the two PDFs |
-| `docs/` | Working notes in Spanish: decisions, steps for Diego, LinkedIn texts, review of public repositories |
+| `docs/` | Working notes in Spanish: decisions, steps for Diego, LinkedIn texts, review of public repositories; `docs/review/` holds screenshots from the last review |
 
 ```bash
 make cv      # rebuild both CV PDFs (first run creates .venv and installs reportlab)
 ```
 
 ```bash
-make check   # fail if an em dash or the old orange accent comes back
+make check   # fail if an em dash, the old orange accent or retired wording comes back
 ```
 
 ```bash

@@ -1,5 +1,5 @@
 # Usage:  make cv     -> rebuilds both CV PDFs from cv/cv.en.json and cv/cv.es.json
-#         make check  -> fails if an em dash or the old orange accent sneaks back in
+#         make check  -> fails if an em dash, the old orange accent or retired wording sneaks back in
 #         make serve  -> preview the site at http://localhost:8000
 VENV := .venv
 PY   := $(VENV)/bin/python
@@ -17,7 +17,8 @@ cv: $(PY)
 check:
 	@! grep -n "—" index.html docs/LINKEDIN.md cv/*.json || (echo "em dash found" && exit 1)
 	@! grep -n -i "f97316\|c2410c\|e8590c\|fdba74\|9a3412" index.html || (echo "orange accent found" && exit 1)
-	@echo "ok: no em dashes, no orange"
+	@! grep -n -i "aerospace\|aeroespacial\|QEC Lab\|champion\|campeón" index.html docs/LINKEDIN.md cv/*.json || (echo "retired wording found" && exit 1)
+	@echo "ok: no em dashes, no orange, no retired wording"
 
 serve:
 	python3 -m http.server 8000

@@ -112,3 +112,93 @@ tono), reescalado al fondo `#101214`, recorte y exportación a WebP.
   360 px: sin desbordes horizontales ni errores de consola.
 - Los datos personales que no están en ningún repositorio: año del C1 (2025, heredado de la web
   anterior), nombre del instituto, CS50x «in progress», judo y clases. Lista en `PASOS_PARA_DIEGO.md`.
+
+---
+
+# Revisión del 13 de noviembre de 2026
+
+Sesión de contenido, coherencia y pulido. La estética no se ha tocado. Estas decisiones
+sustituyen a las anteriores cuando se contradicen (en especial la 8, la 12 y la 23).
+
+## Cambios que pediste
+
+24. **Judo:** solo «Judo, black belt» en la web, los dos CV y LinkedIn.
+25. **Solicitudes:** Computer Science and Engineering (TU Delft, selection test), Applied
+    Physics (TU Eindhoven) y Advanced Technology (University of Twente), «in preparation».
+    Titular de la web, del CV y de LinkedIn: «Final-year science student in Madrid · physics,
+    AI and engineering». Los nombres de los grados se quedan en inglés también en el CV
+    español, porque son los nombres oficiales.
+26. **Intereses**, en tu orden: superinteligencia y robótica, física (sobre todo cuántica),
+    machine learning e IA, y matemáticas. Están en la web, en LinkedIn y, como línea nueva, en
+    los dos CV.
+27. **Syndrome Lab** sustituye a QEC Lab en todas partes. «In progress», sin enlace y sin
+    cifras, con tu frase tal cual. No he leído el repositorio `syndrome-lab`: no hacía falta
+    para escribir una ficha sin cifras.
+28. **CS50x:** «Started 2026». Lo he quitado además de «Currently» en About, porque esa línea
+    decía que lo estás cursando ahora.
+29. **gravity-lab:** ficha sin cambios. Sus cifras coinciden con el README actual.
+
+## Decisiones mías
+
+30. **El trading cuantitativo sale de la lista de intereses** (no está en la que me diste).
+    Quant Path sigue en «More work» y en LinkedIn como proyecto. El mensaje de conexión 13
+    (quants) ahora dice «out of interest in quantitative trading» en lugar de «long-term goal».
+31. **Título de la página:** «Physics, AI and engineering» en lugar de «Physics and engineering
+    portfolio», para que coincida con el titular.
+32. **Ficha de Syndrome Lab:** además de tu frase, conserva la pregunta y las reglas (las mismas
+    que RAAN) y añade las etiquetas Stim, PyMatching y Python. He quitado la frase «It will be
+    built with an AI coding assistant»: no la he comprobado. Cuando publiques, añade un
+    apartado «How it was made» como en los demás proyectos.
+33. **Quant Path en el CV:** decía «110 code-verified problems». El repositorio dice 110
+    problemas, 101 verificados del todo por código. Ahora el CV dice lo mismo que la web.
+34. **LinkedIn, tabla de conexiones:** las filas 5 y 7 hablaban de Aerospace Engineering y de
+    DARE. Ahora son estudiantes de Computer Science and Engineering y equipos estudiantiles
+    de Delft en general (sin nombres de equipos, que no he podido comprobar).
+35. **«Holanda» pasa a «Países Bajos»** en los textos en español de LinkedIn, como en el CV.
+36. **CV en español:** frases rehechas para que suenen naturales («lo contrasto con medidas»,
+    «termino en junio de 2027», «en la actualidad»), sin cambiar el contenido.
+37. **`make check` vigila también el texto retirado:** falla si reaparecen «Aerospace»,
+    «QEC Lab» o «champion» en la web, los CV o LinkedIn.
+38. **Capturas de la revisión en `docs/review/`** (móvil 390 px, escritorio 1280 px y los dos
+    CV como imagen), para la descripción del pull request. Se pueden borrar después de fusionar.
+
+## Cifras comprobadas hoy contra cada repositorio
+
+| Proyecto | Fuente | Resultado |
+|---|---|---|
+| RAAN | `kessler`, `README.md` y `docs/STATUS.md` en `main` | 20.152 objetos (57 % de 35.194), 666 vectores, 3,5e-5 km, L = 0,694 / 0,627, validación cruzada 0,98 / 1,23 / 0,80, 86 %, GRU 1,32, regresión 2,37, 803 eventos, F1 0,81 / 0,74 / 0,52 / 0,79 / 0,09, 62 + 7 tests, informe de 6 páginas: todo coincide. La copia del informe en `assets/raan/` es idéntica byte a byte a la del repositorio. |
+| gravity-lab | `README.md` | 42,81 / 42,98 / 0,4 %, 1,4e-11, Euler 8 %, 67″, 31 casos: coincide. |
+| KAIROS | `README.md`, `docs/adr/` | 17 agentes, más de 300 tests, 77 registros, cinco caídas: coincide. |
+| Chess trainer | `README.md`, `docs/STATUS.md` | 143 + 5 tests, 12 estructuras, 29 finales: coincide. |
+| Quant Path | `README.md`, `docs/STATUS.md` | 110 problemas, 101 verificados, 9 temas, sin desplegar: coincide (corregido el CV, decisión 33). |
+| TraceGuard | `compliance-tracer`, `README.md` | 30 + 10 commits, 100 %: coincide. |
+| Sympto+ | `getsympto`, `README.md` | Cuatro idiomas, en pausa, condición de carrera sin arreglar: coincide. |
+
+No he quitado ninguna cifra: todas se han podido comprobar.
+
+## Comprobaciones técnicas
+
+- Móvil (390 px) y escritorio (1280 px) en Chromium: sin desbordes horizontales, sin errores
+  de consola, sin recursos rotos.
+- `prefers-reduced-motion`: la nube queda dibujada y fija (dos capturas del lienzo con 1,5 s
+  de diferencia son idénticas). Sin esa preferencia, se anima.
+- Lighthouse 12, móvil, sobre un servidor local: rendimiento 99, accesibilidad 100, buenas
+  prácticas 100, SEO 100. LCP 2,0 s, CLS 0, TBT 20 ms.
+- Los dos CV ocupan una página. Revisados como imagen.
+- Ninguna raya larga (`make check`).
+
+## Enlaces
+
+Comprobados y funcionan (vistos sin iniciar sesión): `github.com/didimacveg`,
+`gravity-lab` y su ancla `#capture-criterion`, `kairos` y `docs/adr`, `getsympto` y su ancla
+`#problems-encountered`. Enlaces internos (anclas, PDF de los CV, informe de RAAN, imágenes):
+todos responden.
+
+**Con problema:** `github.com/didimacveg/kessler` responde 404 a un visitante sin sesión y
+GitHub lo sigue listando como privado. El despliegue de su web terminó bien hoy a las 12:16 UTC,
+pero no he podido abrirla. Ver `PASOS_PARA_DIEGO.md`, paso 2.
+
+**No verificables desde mi entorno** (la red no llega a esos dominios):
+`didimacveg.github.io/kessler/`, `didimacveg.github.io/gravity-lab/`, `traceguard.eu`, la URL
+de LinkedIn y la entrega real del correo. La dirección de correo está bien escrita y es la
+misma en la web y en los dos CV.
