@@ -1,7 +1,7 @@
 {
   "output": "Diego_Macias_Vega_CV_EN.pdf",
   "name": "Diego Macías Vega",
-  "tagline": "Final-year science student in Madrid, applying for 2027 entry to Aerospace Engineering, Applied Physics and Advanced Technology",
+  "tagline": "Final-year science student in Madrid · physics, AI and engineering",
   "contact": [
     "Madrid, Spain · EU citizen",
     "<a href='mailto:dmaciasveg@gmail.com'>dmaciasveg@gmail.com</a>",
@@ -29,12 +29,12 @@
           "head": "University applications, September 2027 entry",
           "org": "the Netherlands",
           "right": "in preparation",
-          "bullets": ["BSc Aerospace Engineering, TU Delft (selection exam) · BSc Applied Physics, TU Eindhoven · BSc Advanced Technology, University of Twente."]
+          "bullets": ["Computer Science and Engineering (TU Delft, selection test) · Applied Physics (TU Eindhoven) · Advanced Technology (University of Twente)."]
         },
         {
           "head": "CS50x: Introduction to Computer Science",
           "org": "Harvard University, online",
-          "right": "2026, in progress",
+          "right": "Started 2026",
           "bullets": []
         }
       ]
@@ -54,10 +54,10 @@
           ]
         },
         {
-          "head": "QEC Lab",
+          "head": "Syndrome Lab",
           "org": "quantum error correction",
           "right": "2026, in progress",
-          "bullets": ["Open lab comparing neural decoders with minimum-weight perfect matching on the surface code. Under construction; no results yet."]
+          "bullets": ["Neural decoders vs minimum-weight perfect matching on the surface code, built with Stim and PyMatching. Results and report to be published late November 2026."]
         },
         {
           "head": "gravity-lab",
@@ -78,7 +78,7 @@
           "head": "Other",
           "org": "",
           "right": "2026",
-          "bullets": ["Chess trainer (Stockfish and Maia, explanations fact-checked by test) · Quant Path (drills and 110 code-verified problems for quantitative trading) · TraceGuard (firmware changes checked against safety rules; paused MVP) · Sympto+ (multilingual health-information web app; paused)."]
+          "bullets": ["Chess trainer (Stockfish and Maia, explanations fact-checked by test) · Quant Path (drills and 110 problems for quantitative trading, 101 verified by code) · TraceGuard (firmware changes checked against safety rules; paused MVP) · Sympto+ (multilingual health-information web app; paused)."]
         }
       ]
     },
@@ -98,7 +98,8 @@
       "lines": [
         "<b>Technical:</b> Python, C++17, TypeScript; numerical integration, orbital propagation (SGP4), gradient boosting and recurrent networks, evaluation design (baselines, cross-validation, bootstrap); Git, Linux/WSL, Docker, GitHub Actions.",
         "<b>Languages:</b> Spanish (native) · English, Cambridge C1 Advanced (score 186, obtained at 16) · Chinese, YCT 2.",
-        "<b>Sport:</b> Judo black belt; Madrid champion at age 12 (no longer competing)."
+        "<b>Interests:</b> superintelligence and robotics · physics, quantum above all · machine learning and AI · mathematics.",
+        "<b>Sport:</b> Judo, black belt."
       ]
     }
   ]

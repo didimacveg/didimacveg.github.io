@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diego Macías Vega · Physics and engineering portfolio</title>
+<title>Diego Macías Vega · Physics, AI and engineering</title>
 <meta name="description" content="Diego Macías Vega, Madrid. Software built on physics and mathematics and checked against measurement: an open orbital-data lab, an N-body simulator validated against astronomy, and a quantum error correction lab in progress.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#101214">
-<meta property="og:title" content="Diego Macías Vega · Physics and engineering portfolio">
+<meta property="og:title" content="Diego Macías Vega · Physics, AI and engineering">
 <meta property="og:description" content="RAAN, gravity-lab, KAIROS and more: what each project does, what it measured, and how it was made.">
 <meta property="og:url" content="https://didimacveg.github.io/">
 <meta property="og:type" content="website">
@@ -152,13 +152,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="kicker">Madrid · applying for 2027 · Aerospace Engineering · Applied Physics · Advanced Technology</p>
+      <p class="kicker">Madrid · final-year science student · physics, AI and engineering</p>
       <h1>Diego Macías Vega</h1>
       <p class="lede">I build software on physics and mathematics that has to be right about
         the physical world, and I check it against measurement, not against my own
         expectations. An open orbital-data lab that reproduces its baselines and publishes
         its negative results, an N-body simulator that reproduces Mercury's relativistic
-        precession and, in progress, a lab for quantum error correction.</p>
+        precession and, in progress, Syndrome Lab, on decoders for quantum error correction.</p>
       <p class="facts">
         <span>EU citizen</span>
         <span>ES native · EN C1 · ZH YCT 2</span>
@@ -182,25 +182,25 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <div class="about">
       <div>
         <p>I'm 17, in my final year of the Sciences <em>Bachillerato</em> in Madrid, and I'm
-          applying to start in the Netherlands in September 2027: <strong>Aerospace
-          Engineering</strong> at TU Delft, <strong>Applied Physics</strong> at TU/e or
-          <strong>Advanced Technology</strong> at Twente. What draws me is the part of
-          physics and engineering where a model meets reality: orbits, atoms, error
-          rates, safety limits. Places where "it looks right" is not an answer and a
-          number has to agree with a measurement.</p>
+          preparing applications to start in the Netherlands in September 2027:
+          <strong>Computer Science and Engineering</strong> at TU Delft, <strong>Applied
+          Physics</strong> at TU Eindhoven or <strong>Advanced Technology</strong> at the
+          University of Twente. What draws me is the place where a model meets reality:
+          orbits, atoms, error rates, learning machines. There, "it looks right" is not
+          an answer. A number has to agree with a measurement.</p>
         <p>Most of what I know about software I taught myself by building complete systems.
           I use AI heavily as a development tool and I say so openly: much of the code on
           this page was written by an AI coding assistant. What is mine is the question,
           the rules each project has to obey, the decisions about what to build and what
           to cut, and the responsibility for every claim. Each project below states its
           own split.</p>
-        <p>Outside engineering: <strong>black belt in judo</strong> and Madrid champion at
-          12 (I no longer compete). I also tutor school students privately.</p>
+        <p>Outside engineering: <strong>black belt in judo</strong>. I also tutor school
+          students privately.</p>
       </div>
       <dl class="side">
-        <dt>Interests</dt><dd>Space engineering, physics (quantum physics in particular), machine learning, simulation and, in the long run, quantitative trading</dd>
-        <dt>Currently</dt><dd>2nd year of Bachillerato · preparing the TU Delft selection exam · CS50x (Harvard, online)</dd>
-        <dt>Building</dt><dd>RAAN, an open orbital-data lab, and QEC Lab, on quantum error correction</dd>
+        <dt>Interests</dt><dd>Superintelligence and robotics, physics (quantum physics above all), machine learning and AI, and mathematics</dd>
+        <dt>Currently</dt><dd>Final year of Bachillerato · preparing the TU Delft selection test</dd>
+        <dt>Building</dt><dd>RAAN, an open orbital-data lab, and Syndrome Lab, on quantum error correction</dd>
       </dl>
     </div>
   </div>
@@ -299,25 +299,26 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       </div>
     </article>
 
-    <article class="project" aria-labelledby="p-qec">
-      <div class="p-head"><h3 id="p-qec">QEC Lab</h3><span class="status">In progress · no results yet</span></div>
-      <p class="one">An open lab for quantum error correction: neural decoders against
-        minimum-weight perfect matching (MWPM) on the surface code.</p>
+    <article class="project" aria-labelledby="p-syn">
+      <div class="p-head"><h3 id="p-syn">Syndrome Lab <small>Quantum error correction</small></h3><span class="status">In progress</span></div>
+      <p class="one">Neural decoders vs minimum-weight perfect matching on the surface code,
+        built with Stim and PyMatching. Results and report to be published late November 2026.</p>
       <dl class="psrt">
         <dt>Question</dt>
         <dd>A quantum computer only works if errors are decoded faster than they accumulate.
-          MWPM is the standard decoder for the surface code. When, if ever, does a neural
-          decoder beat it, and at what cost?</dd>
-        <dt>Plan</dt>
-        <dd>Same rules as RAAN: reproduce the MWPM baseline first, then train neural decoders
-          and compare them under one protocol, publishing the result whichever way it goes.</dd>
+          Minimum-weight perfect matching (MWPM) is the standard decoder for the surface
+          code. When, if ever, does a neural decoder beat it, and at what cost?</dd>
+        <dt>Rules</dt>
+        <dd>The same as RAAN: reproduce the MWPM baseline first, compare every decoder
+          under one protocol, and publish the result whichever way it goes.</dd>
+        <dt>Technology</dt>
+        <dd class="tags"><span>Stim</span><span>PyMatching</span><span>Python</span></dd>
         <dt>State</dt>
-        <dd>Under construction. There is nothing to show yet, so there are no numbers here.
-          They will appear when anyone can reproduce them. It will be built with an AI coding
-          assistant, with the same split as RAAN.</dd>
+        <dd>In progress. There are no figures here yet: they will appear with the report,
+          when anyone can reproduce them.</dd>
       </dl>
       <div class="links">
-        <span class="btn alt">Repository private while in development</span>
+        <span class="btn alt">Repository private until the results are published</span>
       </div>
     </article>
 
@@ -485,8 +486,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <li><b>Bachillerato in Sciences &amp; Technology</b><span class="when">2025 – 2027</span>
         <span class="what">IES San Agustín del Guadalix, Madrid · Mathematics II, Physics, Technology &amp; Engineering, Computer Science</span></li>
       <li><b>University applications, September 2027 entry</b><span class="when">in preparation</span>
-        <span class="what">BSc Aerospace Engineering, TU Delft (selection exam) · BSc Applied Physics, TU Eindhoven · BSc Advanced Technology, University of Twente</span></li>
-      <li><b>CS50x: Introduction to Computer Science</b><span class="when">2026 · in progress</span>
+        <span class="what">The Netherlands: Computer Science and Engineering (TU Delft, selection test), Applied Physics (TU Eindhoven), Advanced Technology (University of Twente)</span></li>
+      <li><b>CS50x: Introduction to Computer Science</b><span class="when">Started 2026</span>
         <span class="what">Harvard University, online</span></li>
     </ul>
   </div>
@@ -500,8 +501,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         <span class="what">English, CEFR level C1 · score 186 · obtained at 16</span></li>
       <li><b>YCT 2</b><span class="when"></span>
         <span class="what">Youth Chinese Test, level 2</span></li>
-      <li><b>Judo, black belt</b><span class="when"></span>
-        <span class="what">Madrid champion at age 12 · no longer competing</span></li>
+      <li><b>Judo, black belt</b></li>
     </ul>
   </div>
 </section>

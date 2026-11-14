@@ -2,90 +2,96 @@
 
 Lo que depende de ti, en orden. Comandos para terminal **Ubuntu/WSL**: copia cada bloque tal cual.
 
-El trabajo está en la rama `claude/epic-fermat-pxzd1k`. **La web pública no cambia hasta que
-la fusiones en `main`** (paso 3).
+Revisión del 13 de noviembre de 2026. El trabajo está en la rama `claude/upbeat-davinci-m61j9h`,
+con un pull request abierto contra `main`. **La web pública no cambia hasta que lo fusiones**
+(paso 3).
 
 ---
 
-## 1. Comprueba que todo lo que dice la web es verdad (15 minutos)
-
-Baja la rama y abre la web en tu ordenador:
+## 1. Lee lo que ha cambiado (10 minutos)
 
 ```bash
-cd ~ && git clone https://github.com/didimacveg/didimacveg.github.io.git
-```
-
-```bash
-cd ~/didimacveg.github.io && git checkout claude/epic-fermat-pxzd1k
+cd ~/didimacveg.github.io && git fetch origin && git checkout claude/upbeat-davinci-m61j9h && git pull
 ```
 
 ```bash
 make serve
 ```
 
-Abre <http://localhost:8000> y lee la página entera. (Si ya tenías el repositorio clonado,
-sustituye el primer comando por `cd ~/didimacveg.github.io && git fetch origin`.)
+Abre <http://localhost:8000>. (Si no tienes el repositorio clonado:
+`cd ~ && git clone https://github.com/didimacveg/didimacveg.github.io.git` y repite.)
 
-Comprueba en especial lo que **yo no puedo verificar**:
+Comprueba lo que **yo no puedo verificar**:
 
-- [ ] **«How it was made» de cada proyecto.** Dice qué hizo la IA y qué es tuyo. En gravity-lab,
-      Chess trainer, Quant Path, ARETÉ y TraceGuard lo he deducido. Si una frase no es exacta,
-      cámbiala. Frases que debes mirar: «using it on my own games», «using it on my own
-      machine», «doing the training», «the conversations with hardware engineers that shaped it».
-- [ ] Cambridge C1 Advanced: año **2025**, nota **186**, «obtained at 16». ¿Quieres la nota a la vista?
-- [ ] Instituto: «IES San Agustín del Guadalix», Bachillerato 2025 – 2027.
-- [ ] «CS50x, in progress»: si lo has dejado o terminado, cámbialo.
-- [ ] «Preparing the TU Delft selection exam» (apartado About).
-- [ ] «Madrid champion at 12» y «black belt».
-- [ ] «I also tutor school students privately».
-- [ ] «EU citizen».
-- [ ] Que funcionan <https://traceguard.eu>, <https://getsympto.app>,
-      <https://didimacveg.github.io/gravity-lab/> y tu enlace de LinkedIn.
+- [ ] Solicitudes: Computer Science and Engineering (TU Delft, selection test), Applied Physics
+      (TU Eindhoven), Advanced Technology (University of Twente).
+- [ ] «Preparing the TU Delft selection test» (apartado About, «Currently»).
+- [ ] Syndrome Lab: «Results and report to be published late November 2026». Si la fecha se
+      mueve, cámbiala en `index.html`, en los dos `cv/*.json` y en `docs/LINKEDIN.md`.
+- [ ] CS50x: «Started 2026».
+- [ ] Los dos CV: `cv/Diego_Macias_Vega_CV_EN.pdf` y `cv/Diego_Macias_Vega_CV_ES.pdf`.
+- [ ] Lo de siempre: C1 (2025, 186, a los 16), instituto, «EU citizen», clases particulares y
+      los apartados «How it was made».
 
-Para cambiar un texto: edita `index.html` con VS Code (`code index.html`), guarda y recarga.
+## 2. RAAN: el repositorio sigue sin ser público (5 minutos)
 
-## 2. Publica RAAN antes que la web (15 minutos)
+Hoy, 13 de noviembre, `https://github.com/didimacveg/kessler` **da error 404 a quien no ha
+iniciado sesión**, y GitHub lo lista como privado. El botón «Repository» de la ficha de RAAN
+lleva ahí. El despliegue de la web de RAAN sí terminó bien (a las 12:16 UTC), pero desde mi
+entorno no puedo abrir `https://didimacveg.github.io/kessler/`.
 
-La ficha de RAAN enlaza a `https://github.com/didimacveg/kessler` y a
-`https://didimacveg.github.io/kessler/`. **Hoy los dos dan error 404** porque el repositorio es
-privado y `main` está vacío.
+Compruébalo en una ventana privada del navegador (Ctrl+Mayús+N):
 
-**Opción A (recomendada):** haz primero los pasos 1 a 3 de `docs/PASOS_PARA_DIEGO.md` del
-repositorio `kessler` (rama `claude/raan-pre-launch-review-8qqz4h`): hacerlo público, activar
-Pages y fusionar. Cuando <https://didimacveg.github.io/kessler/> cargue, sigue con el paso 3 de aquí.
+- <https://github.com/didimacveg/kessler>
+- <https://didimacveg.github.io/kessler/>
 
-**Opción B:** si aún no quieres publicar RAAN, quita esos dos botones antes de fusionar:
+Si el primero da 404, hazlo público:
 
 ```bash
-cd ~/didimacveg.github.io && sed -i '/kessler\/">Live site<\/a>/d; /github.com\/didimacveg\/kessler">Repository<\/a>/d' index.html
+gh repo edit didimacveg/kessler --visibility public --accept-visibility-change-consequences
 ```
+
+O en la web: <https://github.com/didimacveg/kessler/settings> → abajo del todo, **Change
+visibility** → **Make public**.
+
+Si aún no quieres publicarlo, quita los dos botones antes de fusionar:
 
 ```bash
-git commit -am "Hide RAAN links until the repository is public" && git push
+cd ~/didimacveg.github.io && sed -i '/kessler\/">Live site<\/a>/d; /github.com\/didimacveg\/kessler">Repository<\/a>/d' index.html && git commit -am "Hide RAAN links until the repository is public" && git push
 ```
 
-El enlace al informe técnico funciona en los dos casos (hay una copia en `assets/raan/`).
-Ten en cuenta que con la opción B las capturas, las cifras y el informe de RAAN se publican
-igualmente en esta web.
+## 3. Fusiona el pull request (2 minutos)
 
-## 3. Publica la web (5 minutos)
-
-1. Abre <https://github.com/didimacveg/didimacveg.github.io/pull/new/claude/epic-fermat-pxzd1k>
-2. **Create pull request** → **Merge pull request** → **Confirm merge**.
-3. Espera un par de minutos y abre <https://didimacveg.github.io>. Si ves la versión antigua,
-   recarga con Ctrl+F5.
-
-Sin navegador, desde la terminal:
+El comando exacto, desde Ubuntu/WSL:
 
 ```bash
-cd ~/didimacveg.github.io && git checkout main && git pull && git merge --no-ff origin/claude/epic-fermat-pxzd1k && git push
+cd ~/didimacveg.github.io && git fetch origin && git checkout main && git pull origin main && git merge --no-ff origin/claude/upbeat-davinci-m61j9h -m "Merge content review: applications, Syndrome Lab, CV and LinkedIn" && git push origin main
 ```
 
-## 4. Míralo en tu móvil (5 minutos)
+Con `gh`, si lo tienes instalado, es equivalente:
 
-Abre <https://didimacveg.github.io> en el móvil. Comprueba que la nube de partículas se mueve
-con fluidez, que nada se sale por la derecha y que las capturas de RAAN se amplían al tocarlas.
-Solo lo he probado en un móvil emulado. Si algo falla, dime el modelo y qué ves.
+```bash
+gh pr merge claude/upbeat-davinci-m61j9h --repo didimacveg/didimacveg.github.io --merge
+```
+
+O en el navegador: <https://github.com/didimacveg/didimacveg.github.io/pulls> → el pull
+request → **Merge pull request** → **Confirm merge**.
+
+Espera un par de minutos y abre <https://didimacveg.github.io>. Si ves la versión antigua,
+recarga con Ctrl+F5.
+
+## 4. Comprueba los enlaces que yo no alcanzo (5 minutos)
+
+Con la web ya publicada, pulsa cada uno:
+
+- [ ] RAAN: «Live site» y «Repository» (paso 2).
+- [ ] gravity-lab: «Live simulator» (<https://didimacveg.github.io/gravity-lab/>).
+- [ ] <https://traceguard.eu>
+- [ ] LinkedIn (botón de Contact y enlace del CV).
+- [ ] El correo: envíate uno desde el enlace.
+
+Y mírala en tu móvil: que la nube se mueva con fluidez y nada se salga por la derecha. Solo la
+he probado en un móvil emulado de 390 px.
 
 ## 5. Actualizar el CV (cuando haga falta)
 
@@ -120,7 +126,8 @@ Abre `docs/LINKEDIN.md`. En orden:
 1. **Titular:** tu perfil → lápiz junto a tu nombre → campo «Titular».
 2. **Acerca de:** tu perfil → «Añadir sección» → «Acerca de».
 3. **Proyectos:** «Añadir sección» → «Recomendado» → «Añadir proyecto». Uno por cada proyecto del
-   archivo, en el mismo orden. RAAN, solo después del paso 2 de aquí.
+   archivo, en el mismo orden. RAAN, solo después del paso 2 de aquí. Syndrome Lab, cuando
+   publiques el informe.
 4. **Certificaciones:** «Añadir sección» → «Licencias y certificaciones»: Cambridge C1 Advanced
    (Cambridge University Press & Assessment, 2025) y YCT 2.
 5. **Destacado:** añade el enlace a <https://didimacveg.github.io> y el PDF del informe de RAAN.
@@ -149,12 +156,13 @@ cd ~/didimacveg.github.io && git add assets && git commit -m "Update RAAN report
 
   Si cambian las cifras de RAAN, cámbialas también en `index.html`, en los dos `cv/*.json` y en
   `docs/LINKEDIN.md` (busca `0.694`, `0.81` y `20,152`).
-- **QEC Lab tiene resultados:** sustituye su ficha en `index.html` (busca `id="p-qec"`). Pídemelo
-  en una sesión nueva con el repositorio `qec-lab` y lo redacto a partir de sus datos.
+- **Syndrome Lab publica resultados (finales de noviembre):** sustituye su ficha en `index.html`
+  (busca `id="p-syn"`), su entrada en los dos `cv/*.json` y el apartado 3.2 de `docs/LINKEDIN.md`.
+  Pídemelo en una sesión nueva con el repositorio `syndrome-lab` y lo redacto a partir de sus datos.
 - **Antes de cada subida:**
 
 ```bash
 cd ~/didimacveg.github.io && make check
 ```
 
-  Falla si se ha colado una raya larga o el naranja antiguo.
+  Falla si se ha colado una raya larga, el naranja antiguo o texto retirado (Aerospace, QEC Lab).
