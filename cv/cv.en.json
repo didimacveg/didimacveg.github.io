@@ -55,9 +55,9 @@
         },
         {
           "head": "Syndrome Lab",
-          "org": "quantum error correction",
-          "right": "2026, in progress",
-          "bullets": ["Neural decoders vs minimum-weight perfect matching on the surface code, built with Stim and PyMatching. Results and report to be published late November 2026."]
+          "org": "quantum error correction · <a href='https://didimacveg.github.io/syndrome-lab/'>site</a> · <a href='https://github.com/didimacveg/syndrome-lab'>repository</a> · <a href='https://github.com/didimacveg/syndrome-lab/blob/main/report/syndrome-lab-report.pdf'>report (PDF)</a>",
+          "right": "2026",
+          "bullets": ["Neural decoders vs matching (MWPM) on the surface code. Network errors ÷ MWPM errors: d&nbsp;=&nbsp;3, 0.82&nbsp;–&nbsp;0.96 (wins); d&nbsp;=&nbsp;5, 0.81&nbsp;–&nbsp;0.96, but loses to correlated MWPM (1.04&nbsp;–&nbsp;1.09); d&nbsp;=&nbsp;7, 1.4&nbsp;–&nbsp;16 (loses). 60&nbsp;–&nbsp;320× slower."]
         },
         {
           "head": "gravity-lab",

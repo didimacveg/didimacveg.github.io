@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diego Macías Vega · Physics, AI and engineering</title>
-<meta name="description" content="Diego Macías Vega, Madrid. Software built on physics and mathematics and checked against measurement: an open orbital-data lab, an N-body simulator validated against astronomy, and a quantum error correction lab in progress.">
+<meta name="description" content="Diego Macías Vega, Madrid. Software built on physics and mathematics and checked against measurement: an open orbital-data lab, an N-body simulator validated against astronomy, and a reproduction of neural decoding for quantum error correction.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#101214">
 <meta property="og:title" content="Diego Macías Vega · Physics, AI and engineering">
@@ -158,7 +158,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         the physical world, and I check it against measurement, not against my own
         expectations. An open orbital-data lab that reproduces its baselines and publishes
         its negative results, an N-body simulator that reproduces Mercury's relativistic
-        precession and, in progress, Syndrome Lab, on decoders for quantum error correction.</p>
+        precession and Syndrome Lab, which tests neural decoders against matching for quantum error correction.</p>
       <p class="facts">
         <span>EU citizen</span>
         <span>ES native · EN C1 · ZH YCT 2</span>
@@ -200,7 +200,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
       <dl class="side">
         <dt>Interests</dt><dd>Superintelligence and robotics, physics (quantum physics above all), machine learning and AI, and mathematics</dd>
         <dt>Currently</dt><dd>Final year of Bachillerato · preparing the TU Delft selection test</dd>
-        <dt>Building</dt><dd>RAAN, an open orbital-data lab, and Syndrome Lab, on quantum error correction</dd>
+        <dt>Building</dt><dd>RAAN, an open orbital-data lab</dd>
         <dt>Working knowledge</dt><dd>Python (beginner, learning), Git and GitHub, Linux/WSL, reading and testing code</dd>
         <dt>Concepts I can explain</dt><dd>Orbital propagation (SGP4), baselines, cross-validation and bootstrap intervals, gradient boosting at a conceptual level, the surface code and minimum-weight perfect matching</dd>
         <dt>Used in AI-assisted projects</dt><dd>C++17, TypeScript, FastAPI, PostgreSQL, Docker, GitHub Actions: written by the assistant, not something I write myself</dd>
@@ -303,25 +303,59 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     </article>
 
     <article class="project" aria-labelledby="p-syn">
-      <div class="p-head"><h3 id="p-syn">Syndrome Lab <small>Quantum error correction</small></h3><span class="status">In progress</span></div>
-      <p class="one">Neural decoders vs minimum-weight perfect matching on the surface code,
-        built with Stim and PyMatching. Results and report to be published late November 2026.</p>
+      <div class="p-head"><h3 id="p-syn">Syndrome Lab <small>Quantum error correction</small></h3><span class="status">Published · reproduction</span></div>
+      <p class="one">An open, CPU-only reproduction of neural decoding for the surface code,
+        compared against minimum-weight perfect matching on identical test shots, with the
+        losses published alongside the wins.</p>
+      <figure class="shot">
+        <a href="assets/syndrome-lab/results.webp"><img src="assets/syndrome-lab/results.webp" width="1200" height="750" loading="lazy" alt="Syndrome Lab results page: the question Does the network beat matching?, and three cards at a physical error rate of 0.3 %: distance 3, CNN 0.88 times MWPM's errors, network wins; distance 5, 0.82, network wins, but 1.05 against correlated matching; distance 7, 4.72, network loses"></a>
+        <figcaption>Results page of the Syndrome Lab site, served from the repository's web folder (the files GitHub Pages publishes) on 15 November 2026. Nothing is edited.</figcaption>
+      </figure>
       <dl class="psrt">
         <dt>Question</dt>
         <dd>A quantum computer only works if errors are decoded faster than they accumulate.
           Minimum-weight perfect matching (MWPM) is the standard decoder for the surface
-          code. When, if ever, does a neural decoder beat it, and at what cost?</dd>
+          code. When, if ever, does a neural decoder beat it, and at what cost? This is not
+          new research: it reproduces at small scale a pattern already known from AlphaQubit
+          and others.</dd>
         <dt>Rules</dt>
         <dd>The same as RAAN: reproduce the MWPM baseline first, compare every decoder
-          under one protocol, and publish the result whichever way it goes.</dd>
+          under one protocol (the same test shots, every training seed pooled, paired
+          bootstrap intervals) and publish the result whichever way it goes. Two classical
+          baselines, MWPM and correlated matching, both given the exact error model.</dd>
         <dt>Technology</dt>
-        <dd class="tags"><span>Stim</span><span>PyMatching</span><span>Python</span></dd>
-        <dt>State</dt>
-        <dd>In progress. There are no figures here yet: they will appear with the report,
-          when anyone can reproduce them.</dd>
+        <dd class="tags"><span>Stim</span><span>PyMatching</span><span>Python</span><span>PyTorch</span><span>3D CNN</span><span>Recurrent transformer</span><span>JavaScript (browser decoders)</span></dd>
+        <dt>Results</dt>
+        <dd>
+          <div class="nums">
+            <div><b>d = 3 · wins</b><span>CNN errors ÷ MWPM errors 0.82 – 0.96; also beats correlated matching</span></div>
+            <div><b>d = 5 · split</b><span>beats MWPM (0.81 – 0.96), loses to correlated matching (1.04 – 1.09)</span></div>
+            <div><b>d = 7 · loses</b><span>1.4 – 16 times MWPM's errors</span></div>
+            <div><b>60 – 320×</b><span>slower per shot than PyMatching, on CPU</span></div>
+          </div>
+          <ul>
+            <li>Circuit-level SI1000 noise, physical error rates from 0.1 % to 1 %, 200,000
+              test shots per point. Below 1 the network wins. At d = 5 the CNN ties MWPM at
+              1 % and ties correlated matching at 0.1 %.</li>
+            <li>The recurrent transformer wins at d = 3 but loses at d = 5 (1.3 – 2.9 times
+              MWPM's errors): under-trained. It was not trained at d = 7.</li>
+            <li>13 models, all trained on CPU. Keeping the advantage as the code grows is the
+              expensive part, which is what the published literature says too.</li>
+          </ul>
+        </dd>
+        <dt>Limits</dt>
+        <dd>Small distances only (3, 5, 7), simulated noise only (no leakage, crosstalk or
+          drift), Z-basis memory only. The networks output one bit per shot and are not
+          streaming decoders. Latency was measured in plain PyTorch on a CPU.</dd>
+        <dt>How it was made</dt>
+        <dd>Built with substantial help from AI coding tools, which wrote the code.
+          <strong>Mine:</strong> the question, the rules (baseline first, one protocol, losses
+          published) and the responsibility for every claim.</dd>
       </dl>
       <div class="links">
-        <span class="btn alt">Repository private until the results are published</span>
+        <a class="btn" href="https://github.com/didimacveg/syndrome-lab/blob/main/report/syndrome-lab-report.pdf">Technical report (PDF) →</a>
+        <a class="btn alt" href="https://didimacveg.github.io/syndrome-lab/">Live site</a>
+        <a class="btn alt" href="https://github.com/didimacveg/syndrome-lab">Repository</a>
       </div>
     </article>
 
@@ -531,6 +565,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     <ul class="edu">
       <li><b><a href="assets/raan/RAAN_technical_report.pdf">RAAN: technical report</a></b><span class="when">2026 · PDF, 6 pages</span>
         <span class="what">Data, protocol and results of the three RAAN studies, including the collision model that did not beat the naive forecast and why. Written with substantial AI assistance; I answer for every claim.</span></li>
+      <li><b><a href="https://github.com/didimacveg/syndrome-lab/blob/main/report/syndrome-lab-report.pdf">Syndrome Lab: technical report</a></b><span class="when">2026 · PDF</span>
+        <span class="what">Neural decoders against MWPM and correlated matching on the surface code: where the network wins (d = 3), where it splits (d = 5) and where it loses (d = 7). Written with substantial AI assistance; I answer for every claim.</span></li>
       <li><b><a href="https://github.com/didimacveg/gravity-lab#capture-criterion">A capture criterion that captured nothing</a></b><span class="when">2026 · gravity-lab</span>
         <span class="what">Why asking "is the body inside the capture radius now?" fails twice over, and the pericentre test that replaces it.</span></li>
       <li><b><a href="https://github.com/didimacveg/kairos/tree/main/docs/adr">KAIROS decision records</a></b><span class="when">2026 · in Spanish</span>

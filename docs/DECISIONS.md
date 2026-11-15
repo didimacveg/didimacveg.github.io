@@ -202,3 +202,24 @@ pero no he podido abrirla. Ver `PASOS_PARA_DIEGO.md`, paso 2.
 `didimacveg.github.io/kessler/`, `didimacveg.github.io/gravity-lab/`, `traceguard.eu`, la URL
 de LinkedIn y la entrega real del correo. La dirección de correo está bien escrita y es la
 misma en la web y en los dos CV.
+
+## Syndrome Lab publicado (15 de noviembre de 2026)
+
+- **Ficha nueva** en la web y en los dos CV: «Published · reproduction», resumen de una línea,
+  resultados, límites, «How it was made» y enlaces a la web, al repositorio y al informe PDF
+  (enlazado en GitHub, porque la web de Syndrome Lab publica solo la carpeta `web/`). El
+  informe también aparece en «Writing».
+- **Cifras:** todas salen de `results/summary.json` del repositorio `syndrome-lab` (generado el
+  13 de noviembre). Cociente de errores lógicos red ÷ decodificador clásico, p = 0,1 % a 1 %,
+  200.000 disparos de test por punto. d = 3: CNN ÷ MWPM 0,82 – 0,96, ÷ MWPM correlacionado
+  0,79 – 0,98. d = 5: ÷ MWPM 0,81 – 0,96 (empate a p = 1 %, McNemar p = 0,2), ÷ correlacionado
+  1,04 – 1,09 (empate a p = 0,1 %, p = 0,43). d = 7: ÷ MWPM 1,4 – 16. Latencia: de 59,8 a 323,7
+  veces la de PyMatching según distancia y modo (redondeado a 60 – 320). Coinciden con el README.
+- **No he puesto las 12,4 horas de CPU del README:** la suma de `train_seconds` en
+  `summary.json` da 12,45 h, que redondea a 12,5. Solo digo «13 modelos».
+- **Captura:** la página de resultados servida en local desde la carpeta `web/` del repositorio
+  (los mismos archivos que publica GitHub Pages), porque desde mi entorno no se llega a
+  `didimacveg.github.io`. 1200 × 750, WebP, sin editar.
+- **CV:** para que siga en una página, los enlaces van en la línea del título del proyecto y la
+  descripción ocupa dos líneas. Los rangos llevan espacios no separables para no partirse.
+- **Pendiente para ti:** `docs/LINKEDIN.md` sigue describiendo Syndrome Lab como «en curso».
