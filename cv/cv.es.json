@@ -55,9 +55,9 @@
         },
         {
           "head": "Syndrome Lab",
-          "org": "corrección de errores cuánticos",
-          "right": "2026, en curso",
-          "bullets": ["Decodificadores neuronales frente al emparejamiento perfecto de peso mínimo (MWPM) en el código de superficie, con Stim y PyMatching. Los resultados y el informe se publicarán a finales de noviembre de 2026."]
+          "org": "corrección de errores cuánticos · <a href='https://didimacveg.github.io/syndrome-lab/'>web</a> · <a href='https://github.com/didimacveg/syndrome-lab'>repositorio</a> · <a href='https://github.com/didimacveg/syndrome-lab/blob/main/report/syndrome-lab-report.pdf'>informe (PDF)</a>",
+          "right": "2026",
+          "bullets": ["Código de superficie, errores de la red neuronal ÷ MWPM: d&nbsp;=&nbsp;3, 0,82&nbsp;–&nbsp;0,96 (gana); d&nbsp;=&nbsp;5, 0,81&nbsp;–&nbsp;0,96, pero pierde con MWPM correlacionado (1,04&nbsp;–&nbsp;1,09); d&nbsp;=&nbsp;7, 1,4&nbsp;–&nbsp;16 (pierde). Entre 60 y 320 veces más lenta."]
         },
         {
           "head": "gravity-lab",
