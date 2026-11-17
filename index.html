@@ -360,51 +360,72 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
     </article>
 
     <article class="project" aria-labelledby="p-gl">
-      <div class="p-head"><h3 id="p-gl">gravity-lab</h3><span class="status">C++17 · validated</span></div>
-      <p class="one">An N-body simulator of the Solar System, checked against astronomical measurement rather than eyeballed.</p>
-      <figure class="shot">
-        <a href="assets/gravity-lab/simulator.webp"><img src="assets/gravity-lab/simulator.webp" width="1200" height="750" loading="lazy" alt="gravity-lab browser simulator: the Solar System seen from above with planet and dwarf-planet orbits, a control panel to choose the integrator (Yoshida 4 selected) and the time step, and counters for elapsed time and energy drift"></a>
-        <figcaption>Browser build of the simulator, Yoshida 4 integrator, after about 20 simulated years. Captured from the repository's web version on 14 November 2026.</figcaption>
-      </figure>
-      <p class="note" style="margin-top:.6rem">The simulator is being improved; this screenshot will be replaced when that work is finished.</p>
+      <div class="p-head"><h3 id="p-gl">gravity-lab</h3><span class="status">C++17 · Validated against JPL Horizons</span></div>
+      <p class="one">An N-body simulator of the Solar System that shows its own error: it starts from
+        NASA/JPL state vectors at J2000.0, integrates on its own and compares every planet with the
+        JPL ephemeris as it goes.</p>
+      <div class="shots">
+        <figure class="shot">
+          <a href="assets/gravity-lab/validation.webp"><img src="assets/gravity-lab/validation.webp" width="1200" height="750" loading="lazy" alt="gravity-lab 3D view of the inner Solar System with planetary orbits after a run to 19 December 2099, next to the Validation panel: a log-scale chart of each planet's position error against NASA/JPL Horizons over 100 years and a table of current and maximum errors, from 3.54 km for Venus to 656 km for Neptune"></a>
+          <figcaption>Validation tab after the 100-year run: position error of each planet against JPL DE441.</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/gravity-lab/mercury.webp"><img src="assets/gravity-lab/mercury.webp" width="1200" height="750" loading="lazy" alt="gravity-lab guided experiment Mercury's perihelion after 100 simulated years: Mercury's orbit around the Sun with the perihelion marked, and a chart of the perihelion angle of the relativistic run minus the Newtonian run growing in a straight line, with the numerical check 42.98 arcseconds per century, pass"></a>
+          <figcaption>Guided experiment: Mercury's perihelion, 1PN run minus Newtonian run, after a century.</figcaption>
+        </figure>
+      </div>
+      <p class="note">Screenshots of the repository's web folder served locally on 17 November 2026,
+        the same build that is published as the live simulator. Nothing is edited.</p>
       <dl class="psrt">
         <dt>Problem</dt>
-        <dd>An orbit simulation always <em>looks</em> plausible. A poor integrator invents
-          effects of its own: at a careless time step this code manufactures 67″ per century
-          of spurious perihelion precession, more than the relativistic effect I wanted to
-          measure. Without validation, a pretty animation proves nothing.</dd>
+        <dd>An orbit simulation always <em>looks</em> plausible, and one that conserves energy can
+          still put a planet in the wrong place. A coarse integrator invents effects of its own:
+          Yoshida 4 at a 0.25-day step adds 165″ per century of spurious perihelion precession, about
+          four times the relativistic effect I wanted to measure. The only convincing check is an
+          external reference.</dd>
         <dt>Solution</dt>
         <dd><ul>
-          <li>Real J2000 initial conditions (planets, dwarf planets, comets) in 3D, barycentric frame.</li>
-          <li>Four integrators compared head to head; the default is <strong>Yoshida 4</strong>,
-            a fourth-order symplectic method, because its energy error stays bounded instead of drifting.</li>
-          <li>First post-Newtonian correction and solar J2; a black-hole module with an
-            ISCO-based capture criterion; adaptive sub-stepping for close encounters.</li>
-          <li>A validation suite that tests conservation laws, convergence order and Kepler's
-            third law on <em>simulated</em> orbits, run in CI on every push.</li>
+          <li>Validated against NASA/JPL Horizons (DE441): each planet's error, every 32 days, on screen.</li>
+          <li>Guided experiments: Mercury, Trojans at L4/L5, Voyager 2 at Jupiter, integrators.</li>
+          <li>Hypothetical scenarios live apart, in a separate <em>What if</em> tab.</li>
+          <li>3D view; interface in English and Spanish.</li>
         </ul></dd>
         <dt>Technology</dt>
-        <dd class="tags"><span>C++17</span><span>CMake</span><span>Numerical methods</span><span>JavaScript (browser build)</span><span>Python / matplotlib</span><span>GitHub Actions</span></dd>
+        <dd class="tags"><span>C++17</span><span>CMake</span><span>Numerical methods</span><span>JavaScript (browser build)</span><span>Python</span><span>GitHub Actions</span></dd>
         <dt>Result</dt>
         <dd>
           <div class="nums">
-            <div><b>42.81″</b><span>per century, Mercury (GR)</span></div>
-            <div><b>0.4 %</b><span>error vs 42.98″ accepted</span></div>
-            <div><b>1.4e-11</b><span>energy error at 100 yr, Yoshida 4</span></div>
-            <div><b>31</b><span>validation cases</span></div>
+            <div><b>42.976″</b><span>per century, Mercury, 1PN minus Newtonian</span></div>
+            <div><b>42.98″</b><span>accepted value</span></div>
+            <div><b>572.14″</b><span>total advance; DE441, same fit: 572.18″</span></div>
+            <div><b>52</b><span>validation cases, run in CI</span></div>
           </div>
-          The no-perturbation control returns exactly 0″ of precession. Explicit Euler
-          drifts to 8 % energy error over the same 100 years. Known limits: the
-          relativistic term is applied only relative to the dominant central body.
+          Maximum heliocentric position error after 100 years against DE441
+          (Yoshida 6, 0.25-day step):
+          <div class="nums">
+            <div><b>9.3 km</b><span>Mercury</span></div>
+            <div><b>3.5 km</b><span>Venus</span></div>
+            <div><b>303 km</b><span>Earth-Moon barycentre</span></div>
+            <div><b>32 km</b><span>Mars</span></div>
+            <div><b>33 km</b><span>Jupiter</span></div>
+            <div><b>19 km</b><span>Saturn</span></div>
+            <div><b>276 km</b><span>Uranus</span></div>
+            <div><b>656 km</b><span>Neptune</span></div>
+          </div>
+          The precession is measured from the post-Newtonian force, not taken from Einstein's
+          formula. Known limits: no separate Moon, asteroids or Pluto, and the relativistic term
+          is applied relative to the Sun only.
         </dd>
         <dt>How it was made</dt>
         <dd>Built with an AI coding assistant. <strong>Mine:</strong> the decision to validate
-          against measurement instead of trusting the animation, the choice of what to
-          test, and the review of the results.</dd>
+          against an external reference instead of trusting the animation, the choice of what to
+          test, and the review of the results. <a href="https://github.com/didimacveg/gravity-lab/blob/main/docs/DEFENSA.md">DEFENSA.md</a>
+          (in Spanish) explains the physics from first principles.</dd>
       </dl>
       <div class="links">
-        <a class="btn" href="https://github.com/didimacveg/gravity-lab">Repository →</a>
-        <a class="btn alt" href="https://didimacveg.github.io/gravity-lab/">Live simulator</a>
+        <a class="btn" href="https://didimacveg.github.io/gravity-lab/">Live simulator →</a>
+        <a class="btn alt" href="https://github.com/didimacveg/gravity-lab">Repository</a>
+        <a class="btn alt" href="https://github.com/didimacveg/gravity-lab/blob/main/docs/DEFENSA.md">Physics explained (DEFENSA.md)</a>
       </div>
     </article>
 
@@ -567,8 +588,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem
         <span class="what">Data, protocol and results of the three RAAN studies, including the collision model that did not beat the naive forecast and why. Written with substantial AI assistance; I answer for every claim.</span></li>
       <li><b><a href="https://github.com/didimacveg/syndrome-lab/blob/main/report/syndrome-lab-report.pdf">Syndrome Lab: technical report</a></b><span class="when">2026 · PDF</span>
         <span class="what">Neural decoders against MWPM and correlated matching on the surface code: where the network wins (d = 3), where it splits (d = 5) and where it loses (d = 7). Written with substantial AI assistance; I answer for every claim.</span></li>
-      <li><b><a href="https://github.com/didimacveg/gravity-lab#capture-criterion">A capture criterion that captured nothing</a></b><span class="when">2026 · gravity-lab</span>
-        <span class="what">Why asking "is the body inside the capture radius now?" fails twice over, and the pericentre test that replaces it.</span></li>
+      <li><b><a href="https://github.com/didimacveg/gravity-lab/blob/main/docs/DEFENSA.md">gravity-lab: the physics, defended</a></b><span class="when">2026 · in Spanish</span>
+        <span class="what">The simulator explained from first principles, including why an earlier version measured 42.81″ instead of 42.98″ for Mercury and the first-order bug that the comparison with JPL Horizons exposed.</span></li>
       <li><b><a href="https://github.com/didimacveg/kairos/tree/main/docs/adr">KAIROS decision records</a></b><span class="when">2026 · in Spanish</span>
         <span class="what">77 short records of architectural decisions written as they were made, among them a web search that failed for months by returning success.</span></li>
       <li><b><a href="https://github.com/didimacveg/getsympto#problems-encountered">A race condition in a usage limit</a></b><span class="when">2026 · Sympto+</span>

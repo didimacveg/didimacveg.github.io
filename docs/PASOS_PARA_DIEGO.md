@@ -169,9 +169,9 @@ cd ~/didimacveg.github.io && git add assets && git commit -m "Update RAAN report
 
   Si cambian las cifras de RAAN, cámbialas también en `index.html`, en los dos `cv/*.json` y en
   `docs/LINKEDIN.md` (busca `0.694`, `0.81` y `20,152`).
-- **gravity-lab termina su mejora:** sustituye `assets/gravity-lab/simulator.webp` por una
-  captura nueva (WebP, 1200 px de ancho como mucho) y quita la nota «The simulator is being
-  improved…» de su ficha en `index.html`.
+- **Si cambian las cifras de gravity-lab:** cámbialas en su ficha de `index.html` (busca
+  `id="p-gl"`), en los dos `cv/*.json` y en `docs/LINKEDIN.md` (busca `42.976`, `9.3` y `52`).
+  Las capturas están en `assets/gravity-lab/` (`validation.webp` y `mercury.webp`).
 - **Syndrome Lab publica resultados (finales de noviembre):** sustituye su ficha en `index.html`
   (busca `id="p-syn"`), su entrada en los dos `cv/*.json` y el apartado 3.2 de `docs/LINKEDIN.md`.
   Pídemelo en una sesión nueva con el repositorio `syndrome-lab` y lo redacto a partir de sus datos.

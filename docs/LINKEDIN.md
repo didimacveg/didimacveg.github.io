@@ -37,9 +37,9 @@ I build software on physics and mathematics, and I check it against measurement 
 What I have built so far:
 
 • RAAN, an open lab on public orbital data: a digital twin of 20,152 catalogued objects, a collision-risk study on ESA's dataset and a manoeuvre detector. The naive baseline is reproduced first, and the result where my model did not beat it is published as it is.
-• gravity-lab, an N-body simulator in C++ that reproduces Mercury's relativistic precession within 0.4 % of the accepted value.
+• gravity-lab, an N-body simulator of the Solar System in C++ validated against NASA/JPL Horizons. It measures Mercury's relativistic precession at 42.976 arcseconds per century (accepted: 42.98).
 • KAIROS, a local-first AI assistant with 17 agents and every design decision written down.
-• In progress: Syndrome Lab, neural decoders vs minimum-weight perfect matching on the surface code. Results and report to be published late November 2026.
+• Syndrome Lab, an open reproduction of neural decoders vs minimum-weight perfect matching on the surface code, published with its losses: the network wins at distance 3 and loses at distance 7.
 
 How I build: I design, direct, review and test projects built with AI coding assistants (Claude Code). I define the problem, the evaluation and the acceptance criteria, check results against references and decide what ships. The code in these projects was written by the assistant: I cannot yet write these codebases from scratch, and I am learning programming fundamentals (Python, algorithms) alongside. What is mine is the question, the rules each project must obey (public data only, baselines first, negative results published), the decisions and the responsibility for every claim.
 
@@ -60,9 +60,9 @@ Construyo software basado en física y matemáticas, y lo contrasto con medidas,
 Lo que he construido hasta ahora:
 
 • RAAN, un laboratorio abierto con datos orbitales públicos: un gemelo digital de 20.152 objetos catalogados, un estudio de riesgo de colisión con el dataset de la ESA y un detector de maniobras. Primero se reproduce la línea base, y el resultado en el que mi modelo no la superó está publicado tal cual.
-• gravity-lab, un simulador de N cuerpos en C++ que reproduce la precesión relativista de Mercurio con un 0,4 % de error respecto al valor aceptado.
+• gravity-lab, un simulador de N cuerpos del Sistema Solar en C++ validado con NASA/JPL Horizons. Mide la precesión relativista de Mercurio en 42,976 segundos de arco por siglo (valor aceptado: 42,98).
 • KAIROS, un asistente de IA que funciona en local, con 17 agentes y cada decisión de diseño por escrito.
-• En curso: Syndrome Lab, decodificadores neuronales frente al emparejamiento perfecto de peso mínimo en el código de superficie. Los resultados y el informe se publicarán a finales de noviembre de 2026.
+• Syndrome Lab, una reproducción abierta de decodificadores neuronales frente al emparejamiento perfecto de peso mínimo en el código de superficie, publicada con sus derrotas: la red gana en distancia 3 y pierde en distancia 7.
 
 Cómo trabajo: diseño, dirijo, reviso y pruebo proyectos hechos con asistentes de programación de IA (Claude Code). Defino el problema, cómo se evalúa y los criterios de aceptación, compruebo los resultados con referencias y decido qué se publica. El código de estos proyectos lo ha escrito el asistente: todavía no sé escribir programas así desde cero y, a la vez, estoy aprendiendo los fundamentos de la programación (Python, algoritmos). Lo mío es la pregunta, las reglas que cada proyecto debe cumplir (solo datos públicos, líneas base primero, resultados negativos publicados), las decisiones y la responsabilidad de cada afirmación.
 
@@ -111,18 +111,29 @@ Cómo se hizo: un asistente de IA (Claude Code) escribió la mayor parte del có
 
 ### 3.2 Syndrome Lab
 
-- Fechas: nov. 2026 – actualidad
-- URL: ninguna todavía (el repositorio `syndrome-lab` es privado hasta finales de noviembre).
-  **No lo añadas a «Proyectos» hasta que el informe esté publicado.** Si lo añades antes, solo esto, sin cifras:
+- Fechas: nov. 2026
+- URL: `https://didimacveg.github.io/syndrome-lab/`
 
 ```
-In progress. Neural decoders vs minimum-weight perfect matching on the surface code, built with Stim and PyMatching. Results and report to be published late November 2026.
+An open, CPU-only reproduction of neural decoding for the surface code, compared against minimum-weight perfect matching (MWPM) on identical test shots, with the losses published alongside the wins.
+
+• Circuit-level noise, physical error rates from 0.1 % to 1 %, 200,000 test shots per point. Network errors ÷ MWPM errors: 0.82 – 0.96 at distance 3 (wins), 0.81 – 0.96 at distance 5 but 1.04 – 1.09 against correlated matching, 1.4 – 16 at distance 7 (loses).
+• 60 – 320 times slower per shot than PyMatching, on CPU.
+• 13 models trained on CPU, a technical report and a website with the results.
+
+Built with substantial help from AI coding tools, which wrote the code. Mine: the question, the rules (baseline first, one protocol, losses published) and the responsibility for every claim.
 ```
 
 Español:
 
 ```
-En curso. Decodificadores neuronales frente al emparejamiento perfecto de peso mínimo (MWPM) en el código de superficie, con Stim y PyMatching. Los resultados y el informe se publicarán a finales de noviembre de 2026.
+Reproducción abierta, solo con CPU, de la decodificación neuronal del código de superficie, comparada con el emparejamiento perfecto de peso mínimo (MWPM) sobre los mismos disparos de test, con las derrotas publicadas junto a las victorias.
+
+• Ruido a nivel de circuito, tasas de error físico del 0,1 % al 1 %, 200.000 disparos de test por punto. Errores de la red ÷ errores de MWPM: 0,82 – 0,96 en distancia 3 (gana), 0,81 – 0,96 en distancia 5 pero 1,04 – 1,09 frente al emparejamiento correlacionado, 1,4 – 16 en distancia 7 (pierde).
+• Entre 60 y 320 veces más lenta por disparo que PyMatching, en CPU.
+• 13 modelos entrenados en CPU, un informe técnico y una web con los resultados.
+
+Hecho con mucha ayuda de herramientas de programación con IA, que escribieron el código. Lo mío: la pregunta, las reglas (línea base primero, un único protocolo, derrotas publicadas) y la responsabilidad de cada afirmación.
 ```
 
 ### 3.3 gravity-lab
@@ -131,27 +142,27 @@ En curso. Decodificadores neuronales frente al emparejamiento perfecto de peso m
 - URL: `https://didimacveg.github.io/gravity-lab/`
 
 ```
-An N-body simulator of the Solar System in C++17, validated against astronomical measurement.
+An N-body simulator of the Solar System in C++17, validated against NASA/JPL Horizons (ephemeris DE441).
 
-• Reproduces Mercury's relativistic perihelion precession: 42.81 arcsec per century against the accepted 42.98 (0.4 % error). The control without perturbations returns exactly zero.
-• Four integrators compared. Yoshida 4 (symplectic, fourth order) keeps the energy error at 1.4e-11 over 100 years; explicit Euler drifts to 8 %.
-• Black-hole module with a capture criterion based on the innermost stable circular orbit, and adaptive sub-stepping for close encounters.
-• 31 validation cases run in CI; browser version online.
+• Starts from JPL state vectors at J2000.0 and compares every planet with DE441 every 32 days. Maximum position error after 100 years: 9.3 km for Mercury, 303 km for the Earth-Moon barycentre, 656 km for Neptune.
+• Measures Mercury's relativistic perihelion precession at 42.976 arcseconds per century (accepted: 42.98), from the post-Newtonian force rather than Einstein's formula.
+• Guided experiments: Mercury, Trojans at L4 and L5, Voyager 2 at Jupiter, integrators compared. Hypothetical scenarios are kept in a separate "What if" tab.
+• 52 validation cases run in CI; 3D browser version in English and Spanish.
 
-Built with an AI coding assistant. Mine: the decision to validate against measurement, the choice of what to test and the review of the results.
+Built with an AI coding assistant. Mine: the decision to validate against an external reference, the choice of what to test and the review of the results.
 ```
 
 Español:
 
 ```
-Simulador de N cuerpos del Sistema Solar en C++17, validado con medidas astronómicas.
+Simulador de N cuerpos del Sistema Solar en C++17, validado con NASA/JPL Horizons (efemérides DE441).
 
-• Reproduce la precesión relativista del perihelio de Mercurio: 42,81 arcsec por siglo frente a los 42,98 aceptados (0,4 % de error). El control sin perturbaciones da exactamente cero.
-• Cuatro integradores comparados. Yoshida 4 (simpléctico, cuarto orden) mantiene el error de energía en 1,4e-11 a 100 años; Euler explícito deriva hasta el 8 %.
-• Módulo de agujero negro con un criterio de captura basado en la órbita circular estable más interna, y subdivisión adaptativa del paso en encuentros cercanos.
-• 31 casos de validación en CI; versión web en línea.
+• Parte de los vectores de estado de JPL en J2000.0 y compara cada planeta con DE441 cada 32 días. Error máximo de posición a 100 años: 9,3 km en Mercurio, 303 km en el baricentro Tierra-Luna, 656 km en Neptuno.
+• Mide la precesión relativista del perihelio de Mercurio en 42,976 segundos de arco por siglo (valor aceptado: 42,98), a partir de la fuerza posnewtoniana y no de la fórmula de Einstein.
+• Experimentos guiados: Mercurio, troyanos en L4 y L5, Voyager 2 en Júpiter y comparación de integradores. Los escenarios hipotéticos van en una pestaña aparte, «What if».
+• 52 casos de validación en CI; versión web en 3D en inglés y español.
 
-Construido con un asistente de IA. Lo mío: la decisión de validar con medidas, la elección de qué comprobar y la revisión de los resultados.
+Construido con un asistente de IA. Lo mío: la decisión de validar con una referencia externa, la elección de qué comprobar y la revisión de los resultados.
 ```
 
 ### 3.4 KAIROS

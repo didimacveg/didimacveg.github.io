@@ -61,12 +61,9 @@
         },
         {
           "head": "gravity-lab",
-          "org": "C++17, numerical methods",
+          "org": "C++17, numerical methods · <a href='https://didimacveg.github.io/gravity-lab/'>site</a> · <a href='https://github.com/didimacveg/gravity-lab'>repository</a>",
           "right": "2026",
-          "bullets": [
-            "N-body simulator of the Solar System validated against measurement: reproduces Mercury's relativistic perihelion precession (42.81 arcsec/century; accepted 42.98, error 0.4 %).",
-            "Four integrators compared; Yoshida 4 (symplectic) holds energy error at 1.4e-11 over 100 years. 31 validation cases in CI. Browser build online."
-          ]
+          "bullets": ["Solar System N-body simulator validated against NASA/JPL Horizons: Mercury within 9.3&nbsp;km of JPL after 100 years; relativistic precession measured at 42.976&nbsp;arcsec/century (accepted 42.98). 52 validation cases in CI."]
         },
         {
           "head": "KAIROS",
