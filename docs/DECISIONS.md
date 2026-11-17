@@ -223,3 +223,29 @@ misma en la web y en los dos CV.
 - **CV:** para que siga en una página, los enlaces van en la línea del título del proyecto y la
   descripción ocupa dos líneas. Los rangos llevan espacios no separables para no partirse.
 - **Pendiente para ti:** `docs/LINKEDIN.md` sigue describiendo Syndrome Lab como «en curso».
+
+## gravity-lab, versión validada con JPL Horizons (17 de noviembre de 2026)
+
+- **Ficha nueva:** etiqueta «C++17 · Validated against JPL Horizons», sin la nota de «being
+  improved». Resumen de lo que hay: validación contra Horizons (DE441), experimentos guiados,
+  pestaña «What if» separada, vista 3D, interfaz en inglés y español. Enlaces a la web, al
+  repositorio y a `docs/DEFENSA.md`.
+- **Cifras:** todas del `README.md` de `gravity-lab` (rama `main`, commit `37f2c1d`), y las de
+  error por planeta comprobadas también en `docs/validation_table.md` y `web/data/validation.json`
+  (Yoshida 6, paso de 0,25 días, 100 años): Mercurio 9,26 km, Venus 3,54, Tierra-Luna 303, Marte
+  32,1, Júpiter 32,9, Saturno 19,0, Urano 276, Neptuno 656. Precesión 1PN − newtoniana 42,976″/siglo
+  (aceptado 42,98); avance total 572,14″ frente a 572,18″ de DE441; 52 casos de validación; 165″
+  de precesión espuria con Yoshida 4 a 0,25 días (sustituye a los 67″ de la versión antigua).
+- **Tabla:** la de error por planeta usa la misma rejilla `.nums` que el resto de resultados, para
+  no añadir CSS.
+- **Capturas:** carpeta `web/` de `gravity-lab` servida en local con `python3 -m http.server`,
+  ventana de 1200 × 750, WebP. Validación tras «Run 100 years now» (el panel marca 42.98″ y el
+  error máximo de Neptuno, 656 km) y experimento de Mercurio tras un siglo. Sin editar.
+  `simulator.webp` se ha borrado.
+- **Writing:** el enlace «A capture criterion that captured nothing» apuntaba a un ancla
+  (`#capture-criterion`) que ya no existe en el README. Lo sustituye `docs/DEFENSA.md`.
+- **CV:** una sola viñeta para que siga en una página, con enlaces a la web y al repositorio en
+  la línea del título, como Syndrome Lab.
+- **LinkedIn:** Syndrome Lab y gravity-lab ya no aparecen «en curso»; cifras actualizadas.
+- **Pendiente para ti:** ahora `gravity-lab` tiene `DEFENSA.md`; si quieres, la integración
+  numérica puede volver a «Concepts I can explain» (no lo he cambiado).

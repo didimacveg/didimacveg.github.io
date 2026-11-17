@@ -61,12 +61,9 @@
         },
         {
           "head": "gravity-lab",
-          "org": "C++17, métodos numéricos",
+          "org": "C++17, métodos numéricos · <a href='https://didimacveg.github.io/gravity-lab/'>web</a> · <a href='https://github.com/didimacveg/gravity-lab'>repositorio</a>",
           "right": "2026",
-          "bullets": [
-            "Simulador de N cuerpos del Sistema Solar validado con medidas astronómicas: reproduce la precesión relativista del perihelio de Mercurio (42,81 arcsec/siglo; valor aceptado 42,98, error 0,4 %).",
-            "Cuatro integradores comparados; Yoshida 4 (simpléctico) mantiene el error de energía en 1,4e-11 a 100 años. 31 casos de validación en CI. Versión web en línea."
-          ]
+          "bullets": ["Simulador de N cuerpos validado con NASA/JPL Horizons: Mercurio a 9,3&nbsp;km de JPL tras 100 años; precesión relativista medida en 42,976&nbsp;arcsec/siglo (aceptado 42,98). 52 casos de validación en CI."]
         },
         {
           "head": "KAIROS",
